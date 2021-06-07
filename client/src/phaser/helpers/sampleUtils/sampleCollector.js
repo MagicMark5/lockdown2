@@ -1,5 +1,6 @@
 import sceneEvents from "../../SceneEvents";
 
+
 export default function sampleCollector(player, sample, thisScene) {
   thisScene.samplesTouched = true
   const sampleLocations = thisScene.sampleObjs; // aka this.sampleObjs

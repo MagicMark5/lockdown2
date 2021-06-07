@@ -1,3 +1,5 @@
+const sceneEvents = new Phaser.Events.EventEmitter();
+
 export default function zombieDamage(zombie, shot, scene, player, bossRoom) {
   if (zombie.zombieData.health === 0) {
     zombie.setVisible(false);

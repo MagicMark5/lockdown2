@@ -2,8 +2,8 @@ import Phaser from 'phaser';
 import sceneEvents from "./SceneEvents";
 import Timer from './Timer';
 
-let count = 0;
-let hearts;
+// let count = 0;
+// let hearts;
 let inventoryDisplay;
 
 export default class GameUI extends Phaser.Scene {

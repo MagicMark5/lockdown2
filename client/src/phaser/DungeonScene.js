@@ -21,7 +21,6 @@ import zombieHit from './helpers/zombieUtils/zombieHit';
 // Event emitter for React 
 import sceneEvents from './SceneEvents';
 
-
 /* ------- Dungeon scene Class -------- */ 
 
 export default class Dungeon extends Phaser.Scene {

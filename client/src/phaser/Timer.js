@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
 import sceneEvents from './SceneEvents';
 
-let timerEvent;
-let totalTime;
+// let timerEvent;
+// let totalTime;
 
 export default class Timer extends Phaser.Scene{
     constructor(){

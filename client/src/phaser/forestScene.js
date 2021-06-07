@@ -19,7 +19,6 @@ import zombieDamage from './helpers/zombieUtils/zombieDamage';
 import zombieHit from './helpers/zombieUtils/zombieHit';
 import sceneEvents from './SceneEvents';
 
-
 export default class Forest extends Phaser.Scene {
   constructor() {
     super({ key: "Forest" });
