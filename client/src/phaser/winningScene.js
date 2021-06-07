@@ -1,6 +1,3 @@
-import Phaser from 'phaser'
-
-
 const debug = false;
 
 const win_game = `\n

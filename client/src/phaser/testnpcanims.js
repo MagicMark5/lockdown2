@@ -1,5 +1,3 @@
-import Phaser from "phaser"
-    
 const createNpcAnims = (anims = Phaser.Animations.AnimationManager) => {
 
       anims.create({

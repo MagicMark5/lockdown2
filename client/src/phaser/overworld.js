@@ -1,5 +1,3 @@
-import Phaser from 'phaser';
-
 // import { NPC } from "./NPC1";
 import testnpc from './testnpc'
 import { createNpcAnims } from './testnpcanims';

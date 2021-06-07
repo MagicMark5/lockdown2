@@ -1,5 +1,3 @@
-import Phaser from "phaser"
-
 /* ------------------------------------ GameOver Scene  ------------------------ */
  
 export default class BossUnlock extends Phaser.Scene {

@@ -1,5 +1,3 @@
-import Phaser from "phaser"
-
 /* ------------------------------------ Loading Screen Scene  ------------------------ */
 
 export default class loadingScene extends Phaser.Scene {

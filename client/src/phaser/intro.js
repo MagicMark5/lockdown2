@@ -1,5 +1,3 @@
-import Phaser from 'phaser'
-
 const debug = false;
 
 const game_intro = `\n

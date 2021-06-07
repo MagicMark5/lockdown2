@@ -1,5 +1,3 @@
-import Phaser from "phaser";
-
 // Game Entities
 import Player from "./Player";
 import { Shots, Shot } from './Shots';
