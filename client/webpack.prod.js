@@ -1,7 +1,6 @@
 const path = require('path');
 const common = require('./webpack.common');
 const { merge } = require('webpack-merge');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -10,7 +9,8 @@ module.exports = merge(common, {
   mode: "production",
   output: {
     filename: "[name].[contenthash].bundle.js", 
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    clean: true // replaces/cleans dist folder when changed after build
   }, 
   optimization: {
     minimizer: [
@@ -19,8 +19,7 @@ module.exports = merge(common, {
     ]
   },
   plugins: [  
-    new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}), // extract css into its own bundle
-    new CleanWebpackPlugin() // replaces dist folder when changed after build
+    new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}) // extract css into its own bundle
   ],
   module: {
     rules: [

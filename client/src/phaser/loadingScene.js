@@ -1,5 +1,26 @@
 /* ------------------------------------ Loading Screen Scene  ------------------------ */
 
+// images
+import title_bg from "./../assets/menu-images/title_bg.jpeg";
+import game_over from "./../assets/menu-images/gameover.png";
+import try_again from "./../assets/menu-images/tryagain.png";
+import yes from "./../assets/menu-images/yes.png";
+import no from "./../assets/menu-images/no.png";
+import skull from "./../assets/menu-images/skull.png";
+import options_button from "./../assets/menu-images/menuoptions.png";
+import play_button from "./../assets/menu-images/menuplay.png";
+import logo from "./../assets/menu-images/menuname.png";
+import player from "./../assets/characters/players/player.png";
+import act_1 from "./../assets/menu-images/act1.png";
+import complete from "./../assets/menu-images/complete.png";
+import spacebar from "./../assets/menu-images/spacebar.png";
+import forestportal from "./../assets/menu-images/forestportal.png";
+
+// sounds
+import darkshadow from "./../assets/sounds/darkshadows.mp3";
+import blood from "./../assets/sounds/bloodshed.mp3";
+
+
 export default class loadingScene extends Phaser.Scene {
     constructor() {
         super("loadingScene");
@@ -8,49 +29,50 @@ export default class loadingScene extends Phaser.Scene {
     preload()
     {
         //Loading the Assets for the GameOver
-        this.load.image("title_bg", "src/assets/menu-images/title_bg.jpeg");
+        this.load.image("title_bg", title_bg);
 
-        this.load.image("game_over", "src/assets/menu-images/gameover.png");
+        this.load.image("game_over", game_over);
 
-        this.load.image("try_again", "src/assets/menu-images/tryagain.png");
+        this.load.image("try_again", try_again);
 
-        this.load.image("yes", "src/assets/menu-images/yes.png");
+        this.load.image("yes", yes);
 
-        this.load.image("no", "src/assets/menu-images/no.png");  
+        this.load.image("no", no);  
 
-        this.load.image("skull", "src/assets/menu-images/skull.png");
+        this.load.image("skull", skull);
+
         //Fake Loading Screen assets
             for (let i = 0; i < 4000; i++) {
-        this.load.image('Zombie'+ ' ' + i, 'src/assets/menu-images/skull.png');
+        this.load.image('Zombie'+ ' ' + i, skull);
         }
 
         //Loading the assets for the Main Menu
-        this.load.image("title_bg", "src/assets/menu-images/title_bg.jpeg");
+        this.load.image("title_bg", title_bg);
 
-        this.load.image("options_button", "src/assets/menu-images/menuoptions.png");
+        this.load.image("options_button", options_button);
 
-        this.load.image("play_button", "src/assets/menu-images/menuplay.png");
+        this.load.image("play_button", play_button);
 
-        this.load.image("logo", "src/assets/menu-images/menuname.png");
+        this.load.image("logo", logo);
 
-        this.load.spritesheet("player", "src/assets/characters/players/player.png", {
+        this.load.spritesheet("player", player, {
             frameHeight: 32,
             frameWidth: 32
         });
 
-        this.load.audio("darkshadow", "/src/assets/sounds/darkshadows.mp3")
+        this.load.audio("darkshadow", darkshadow)
 
-        this.load.audio("blood", "/src/assets/sounds/bloodshed.mp3")
+        this.load.audio("blood", blood)
 
         //Loading assets for the winning scene
-        this.load.image("act_1", "src/assets/menu-images/act1.png");
+        this.load.image("act_1", act_1);
 
-        this.load.image("complete", "src/assets/menu-images/complete.png");
+        this.load.image("complete", complete);
 
-        this.load.image("spacebar", "src/assets/menu-images/spacebar.png");
+        this.load.image("spacebar", spacebar);
 
-        //load asses for forest portal
-        this.load.image("forestportal", "src/assets/menu-images/forestportal.png")
+        //load asset for forest portal
+        this.load.image("forestportal", forestportal)
 
         let progressBar = this.add.graphics();
         let progressBox = this.add.graphics();
@@ -112,19 +134,8 @@ export default class loadingScene extends Phaser.Scene {
         });
     }
 
-    create()
-    {
-
+    create() {
         this.scene.start('startMenu')
-            
-        // // Suppress WebGL warnings before changing scenes
-        // text.texture = this.renderer.blankTexture; // Should be wrapped in conditional when rendering direct to canvas?
-        // this.scene.start('Intro')}, this);
-        // this.scene.stop('Menu');
     }
     
 };
-
-
-// module.exports = { loadingScene };
-
