@@ -42,7 +42,7 @@ export default class loadingScene extends Phaser.Scene {
         this.load.image("skull", skull);
 
         //Fake Loading Screen assets
-            for (let i = 0; i < 4000; i++) {
+            for (let i = 0; i < 100; i++) {
         this.load.image('Zombie'+ ' ' + i, skull);
         }
 
