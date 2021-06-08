@@ -11,8 +11,11 @@ module.exports = merge(common, {
     filename: "[name].[contenthash].bundle.js", 
     path: path.resolve(__dirname, "dist"),
     clean: true // replaces/cleans dist folder when changed after build
-  }, 
+  },
   optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
     minimizer: [
       new OptimizeCssAssetsPlugin(), // minify JS
       new TerserPlugin() // minify JS

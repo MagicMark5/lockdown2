@@ -27,10 +27,10 @@ export default class GameOver extends Phaser.Scene {
     hoverSprite2.setVisible(false)
 
     //start music again
-    this.game.sound.stopAll();
-    this.sound.play("darkshadow", {
-      loop: true
-    })
+    // this.game.sound.stopAll();
+    // this.sound.play("darkshadow", {
+    //   loop: true
+    // })
 
     // takes you to the Town scene again, with resetSamples = true
     yesButton.setInteractive();
@@ -44,7 +44,7 @@ export default class GameOver extends Phaser.Scene {
     })
     yesButton.on("pointerup", () => {
       sceneEvents.emit("player-death", data);
-      this.sound.play("blood")
+      //this.sound.play("blood")
       this.scene.start("Intro", data)
     })
 

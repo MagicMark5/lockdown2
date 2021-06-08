@@ -1,6 +1,6 @@
 export default function gameOver(player, thisScene) {
   console.log('gameOver from, ', thisScene);
-  thisScene.game.sound.stopAll();
+  //thisScene.game.sound.stopAll();
 
   // Reset sample locations in all scenes
   

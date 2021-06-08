@@ -3,8 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
-    vendor: "./src/vendor.js"
+    main: {
+      import: "./src/index.js",
+      dependOn: "shared"
+    },
+    vendor: {
+      import: "./src/vendor.js",
+      dependOn: "shared"
+    },
+    shared: "phaser"
   },
   plugins: [
     new HtmlWebpackPlugin({
