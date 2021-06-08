@@ -1,8 +1,9 @@
+import { Scene } from "phaser";
 import sceneEvents from "./SceneEvents";
 
 /* ------------------------------------ GameOver Scene  ------------------------ */
 
-export default class GameOver extends Phaser.Scene {
+export default class GameOver extends Scene {
   constructor() {
     super("GameOver");
   }

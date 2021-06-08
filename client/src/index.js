@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+import { Game, AUTO } from "phaser";
 // // import React from "react";
 // // import ReactDOM from "react-dom";
 // // import App from "./components/App.jsx";
@@ -20,7 +20,7 @@ import GameUI from './phaser/GameUI';
 import "../main.scss";
 
 const config = {
-  type: Phaser.AUTO,
+  type: AUTO,
     parent: 'phaser-example',
     width: 800,
     height: 600,
@@ -50,7 +50,7 @@ const config = {
     }
   };
 
-const game = new Phaser.Game(config);
+const game = new Game(config);
 
 
 // ReactDOM.render(

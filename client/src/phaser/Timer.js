@@ -1,9 +1,10 @@
+import { Scene } from "phaser";
 import sceneEvents from './SceneEvents';
 
 // let timerEvent;
 // let totalTime;
 
-export default class Timer extends Phaser.Scene{
+export default class Timer extends Scene {
     constructor(){
         super({key: 'Timer'})
     }

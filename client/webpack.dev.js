@@ -13,6 +13,9 @@ module.exports = merge(common, {
   devServer: {
     contentBase: './dist',
   },
+  optimization: {
+    concatenateModules: true // hoist scope of all modules into one closure (enabled by default in production)
+  },
   module: {
     rules: [
       {

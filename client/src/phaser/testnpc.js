@@ -1,28 +1,30 @@
+import { Math, Physics, Time, Scene, GameObjects, Tile } from "phaser";
+
 const UP = 0
 const DOWN = 1
 const LEFT = 2
 const RIGHT = 3
 
 const randomDirection = (exclude = this.private_direction) => {
-  let newDirection = Phaser.Math.Between(0,3)
+  let newDirection = Math.Between(0,3)
   while (newDirection === exclude)
   {
-    newDirection = Phaser.Math.Between(0,3)
+    newDirection = Math.Between(0,3)
   }
   return newDirection
 }
 
 
-export default class testnpc extends Phaser.Physics.Arcade.Sprite
+export default class testnpc extends Physics.Arcade.Sprite
 {
   private_direction = DOWN
-  private_moveEvent = Phaser.Time.TimerEvent
+  private_moveEvent = Time.TimerEvent
   
-  constructor(scene = Phaser.scene, x = number, y = number, textureKey = string, frame = string || number)
+  constructor(scene = Scene, x = number, y = number, textureKey = string, frame = string || number)
   {
     super(scene, x, y, textureKey, frame)
 
-    scene.physics.world.on(Phaser.Physics.Arcade.Events.TILE_COLLIDE, this.private_handleTileCollision, this, this.player)
+    scene.physics.world.on(Physics.Arcade.Events.TILE_COLLIDE, this.private_handleTileCollision, this, this.player)
 
     this.private_moveEvent = scene.time.addEvent({
       delay: 2000,
@@ -33,7 +35,7 @@ export default class testnpc extends Phaser.Physics.Arcade.Sprite
     })
     
   }
-  private_handleTileCollision(go = Phaser.GameObjects.GameObject, tile = Phaser.Tile, player = this.player) {
+  private_handleTileCollision(go = GameObjects.GameObject, tile = Tile, player = this.player) {
     if (go !== this || this.player) {
       return
     }

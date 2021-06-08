@@ -1,4 +1,5 @@
-import { Entity } from "./Entity";
+import Entity from "./Entity";
+import { Input } from "phaser";
   
   /* --------------------------------- Player Class ----------------------------------- */
   
@@ -62,7 +63,7 @@ export default class Player extends Entity {
     this.setFrame(this.idleFrame.down);
 
     /////////// Keyboard Inputs 
-    const {LEFT, RIGHT, UP, DOWN, W, A, S, D, SPACE} = Phaser.Input.Keyboard.KeyCodes;
+    const {LEFT, RIGHT, UP, DOWN, W, A, S, D, SPACE} = Input.Keyboard.KeyCodes;
 
     this.keys = scene.input.keyboard.addKeys({
       left: LEFT, 

@@ -1,13 +1,13 @@
-// import { NPC } from "./NPC1";
+import { Scene } from "phaser";
 import testnpc from './testnpc'
 import { createNpcAnims } from './testnpcanims';
-// import { NPC } from "./NPC1";
+
 
 import sceneEvents from './SceneEvents';
 
 // Game Entities
 import Player from "./Player";
-import { Shots, Shot } from './Shots';
+import Shots from './Shots';
 
 // Data Helpers
 import gameOver from './helpers/dataUtils/gameOver';
@@ -25,7 +25,7 @@ import zombieHit from './helpers/zombieUtils/zombieHit';
 
 /* ------------------------------------ Overworld Scene Class ------------------------ */
 
-export default class Town extends Phaser.Scene {
+export default class Town extends Scene {
   constructor() {
     super("Town");
   }

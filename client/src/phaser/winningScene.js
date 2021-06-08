@@ -1,3 +1,6 @@
+import { Scene, GameObjects, Curves } from "phaser";
+
+
 const debug = false;
 
 const win_game = `\n
@@ -21,16 +24,10 @@ const textStyle = {
   color: "WHITE",
 };
 
-export default class Winning extends Phaser.Scene {
+export default class Winning extends Scene {
     constructor() {
       super('Winning');
     }
-    // initialize:
-
-    // Winning ()
-    // { 
-    //     Phaser.Scene.call(this, 'Winning');
-    // },
 
     preload() 
     {
@@ -65,7 +62,7 @@ export default class Winning extends Phaser.Scene {
             lineHeight,
             lineSpacing,
             lineWidths
-          } = Phaser.GameObjects.GetTextSize(
+          } = GameObjects.GetTextSize(
             text,
             text.getTextMetrics(),
             win_game.split("\n")
@@ -99,7 +96,7 @@ export default class Winning extends Phaser.Scene {
 
           text.setMask(mask);
 
-          const path = new Phaser.Curves.Path();
+          const path = new Curves.Path();
 
           for (let i = 0, len = lineWidths.length; i < len; i++) {
             const lineWidth = lineWidths[i];

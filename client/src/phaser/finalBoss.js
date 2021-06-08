@@ -1,6 +1,8 @@
+import { Scene } from "phaser";
+
 // Game Entities
 import Player from "./Player";
-import { Shots, Shot } from './Shots';
+import Shots from './Shots';
 
 // Data Helpers
 import gameOver from './helpers/dataUtils/gameOver';
@@ -13,7 +15,7 @@ import zombieHit from './helpers/zombieUtils/zombieHit';
 
 import sceneEvents from './SceneEvents';
 
-export default class FinalBoss extends Phaser.Scene {
+export default class FinalBoss extends Scene {
   constructor() {
       super({ key: "FinalBoss" });
     }
