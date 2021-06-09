@@ -1,6 +1,3 @@
-import { Scene, GameObjects, Curves } from "phaser";
-
-
 const debug = false;
 
 const win_game = `\n
@@ -24,7 +21,7 @@ const textStyle = {
   color: "WHITE",
 };
 
-export default class Winning extends Scene {
+export default class Winning extends Phaser.Scene {
     constructor() {
       super('Winning');
     }
@@ -62,7 +59,7 @@ export default class Winning extends Scene {
             lineHeight,
             lineSpacing,
             lineWidths
-          } = GameObjects.GetTextSize(
+          } = Phaser.GameObjects.GetTextSize(
             text,
             text.getTextMetrics(),
             win_game.split("\n")
@@ -96,7 +93,7 @@ export default class Winning extends Scene {
 
           text.setMask(mask);
 
-          const path = new Curves.Path();
+          const path = new Phaser.Curves.Path();
 
           for (let i = 0, len = lineWidths.length; i < len; i++) {
             const lineWidth = lineWidths[i];

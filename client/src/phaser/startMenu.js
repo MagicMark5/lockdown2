@@ -1,10 +1,9 @@
-import { Scene } from "phaser";
 import sceneEvents from "./SceneEvents";
 
 /* ------------------------------------ Start Menu Scene  ------------------------ */
 
  
-export default class startMenu extends Scene {
+export default class startMenu extends Phaser.Scene {
   constructor() {
     super("startMenu");
   }

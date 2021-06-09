@@ -1,7 +1,6 @@
-import { Physics } from "phaser";
 import Shot from "./Shot";
 
-export default class Shots extends Physics.Arcade.Group
+export default class Shots extends Phaser.Physics.Arcade.Group
 {
     constructor (scene)
     {

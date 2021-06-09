@@ -1,12 +1,10 @@
 import sceneEvents from "./SceneEvents";
-import Timer from './Timer';
-import { Scene } from "phaser";
 
 // let count = 0;
 // let hearts;
 let inventoryDisplay;
 
-export default class GameUI extends Scene {
+export default class GameUI extends Phaser.Scene {
 
     constructor(){
         super({key: 'GameUI'})

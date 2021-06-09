@@ -1,5 +1,4 @@
 /* ------------------------------------ Loading Screen Scene  ------------------------ */
-import { Scene } from "phaser";
 // images
 import title_bg from "./../assets/menu-images/title_bg.jpeg";
 import game_over from "./../assets/menu-images/gameover.png";
@@ -21,7 +20,7 @@ import forestportal from "./../assets/menu-images/forestportal.png";
 // import blood from "./../assets/sounds/bloodshed.mp3";
 
 
-export default class loadingScene extends Scene {
+export default class loadingScene extends Phaser.Scene {
     constructor() {
         super("loadingScene");
     }

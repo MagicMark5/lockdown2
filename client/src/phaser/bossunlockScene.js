@@ -1,8 +1,6 @@
-import { Scene } from "phaser";
-
 /* ------------------------------------ GameOver Scene  ------------------------ */
  
-export default class BossUnlock extends Scene {
+export default class BossUnlock extends Phaser.Scene {
   constructor() {
     super("BossUnlock");
   }

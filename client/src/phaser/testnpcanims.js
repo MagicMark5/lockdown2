@@ -1,6 +1,4 @@
-import { Animations } from "phaser";
-
-const createNpcAnims = (anims = Animations.AnimationManager) => {
+const createNpcAnims = (anims = Phaser.Animations.AnimationManager) => {
 
       anims.create({
           key: "walk1",

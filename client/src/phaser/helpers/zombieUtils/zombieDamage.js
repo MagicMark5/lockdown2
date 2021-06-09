@@ -1,5 +1,4 @@
-import { Events } from "phaser";
-const sceneEvents = new Events.EventEmitter();
+import sceneEvents from "../../SceneEvents";
 
 export default function zombieDamage(zombie, shot, scene, player, bossRoom) {
   if (zombie.zombieData.health === 0) {

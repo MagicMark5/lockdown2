@@ -1,5 +1,3 @@
-import { Scene } from "phaser";
-
 // Game Entities
 import Player from "./Player";
 import Shots from './Shots';
@@ -19,7 +17,7 @@ import zombieDamage from './helpers/zombieUtils/zombieDamage';
 import zombieHit from './helpers/zombieUtils/zombieHit';
 import sceneEvents from './SceneEvents';
 
-export default class Forest extends Scene {
+export default class Forest extends Phaser.Scene {
   constructor() {
     super({ key: "Forest" });
     this.shots;

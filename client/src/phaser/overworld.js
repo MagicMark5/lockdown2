@@ -1,7 +1,5 @@
-import { Scene } from "phaser";
 import testnpc from './testnpc'
 import { createNpcAnims } from './testnpcanims';
-
 
 import sceneEvents from './SceneEvents';
 
@@ -25,7 +23,7 @@ import zombieHit from './helpers/zombieUtils/zombieHit';
 
 /* ------------------------------------ Overworld Scene Class ------------------------ */
 
-export default class Town extends Scene {
+export default class Town extends Phaser.Scene {
   constructor() {
     super("Town");
   }

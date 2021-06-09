@@ -1,5 +1,3 @@
-import { Scene } from "phaser";
-
 // Game Entities
 import Player from "./Player";
 import Shots from './Shots';
@@ -23,7 +21,7 @@ import sceneEvents from './SceneEvents';
 
 /* ------- Dungeon scene Class -------- */ 
 
-export default class Dungeon extends Scene {
+export default class Dungeon extends Phaser.Scene {
   constructor() {
     super('Dungeon');
   }
