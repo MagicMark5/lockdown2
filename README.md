@@ -6,7 +6,7 @@
 
 Run `npm run devClient` in the project root directory.
 
-This starts a webpack-dev-server, and will open the application in the browser. The app will hot-reload when any files in the src folder are changed and saved. Note that this is only for the purposes of developing the front-end application and will not have access to any back-end routes or data. 
+This starts a webpack-dev-server. Your browser will open and go to `http://localhost:8080`. The app will hot-reload when any files in the src folder are changed and saved. Note that this is only for the purposes of developing the front-end application and will not have access to any back-end routes or data. 
 
 ### Serve the full application (Node/Express back-end & Phaser Front-End)
 1) Run `npm run build` to bundle the client-side code into a `dist` folder
