@@ -26,7 +26,7 @@ import Timer from "./phaser/utils/Timer";
 import GameUI from './phaser/utils/GameUI';
 
 // Styles
-import "../main.scss";
+import "./styles/main.scss";
 
 // Phaser Game Configuration
 
