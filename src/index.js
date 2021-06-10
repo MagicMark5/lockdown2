@@ -9,10 +9,10 @@ import App from "./components/App.jsx";
 /* -------- Phaser Classes -------- */
 
 // Map Scenes
-import Forest from "./phaser/maps/forestScene";
-import Town from "./phaser/maps/overworld";
-import Dungeon from "./phaser/maps/DungeonScene";
-import FinalBoss from "./phaser/maps/finalBoss";
+import Forest from "./phaser/maps/Forest";
+import Town from "./phaser/maps/Town";
+import Dungeon from "./phaser/maps/Dungeon";
+import Boss from "./phaser/maps/Boss";
 // Dialogue Scenes
 import loadingScene from "./phaser/dialogues/loadingScene";
 import startMenu from "./phaser/dialogues/startMenu";
@@ -49,7 +49,7 @@ const config = {
       Forest, 
       Dungeon, 
       GameOver, 
-      FinalBoss, 
+      Boss, 
       BossUnlock, 
       Winning,
       Act1,
