@@ -1,7 +1,7 @@
 import Phaser from "./phaser-custom.min.js";
-// // import React from "react";
-// // import ReactDOM from "react-dom";
-// // import App from "./components/App.jsx";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App.jsx";
 import Forest from "./phaser/forestScene";
 import Town from "./phaser/overworld";
 import Dungeon from "./phaser/DungeonScene";
@@ -53,8 +53,8 @@ const config = {
 const game = new Phaser.Game(config);
 
 
-// ReactDOM.render(
-//   <App />,
-//   document.getElementById("root") || document.createElement("div")
-// );
+ReactDOM.render(
+  <App />,
+  document.getElementById("root") || document.createElement("div")
+);
 
