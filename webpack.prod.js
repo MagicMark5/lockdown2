@@ -13,9 +13,6 @@ module.exports = merge(common, {
     clean: true // replaces/cleans dist folder when changed after build
   },
   optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
     minimizer: [
       new OptimizeCssAssetsPlugin(), // minify JS
       new TerserPlugin() // minify JS

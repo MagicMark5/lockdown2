@@ -5,12 +5,12 @@ module.exports = {
   entry: {
     main: {
       import: "./src/index.js"
-    },
-    // vendor: {
-    //   import: "./src/vendor.js",
-    //   dependOn: "shared"
-    // },
-    // shared: "phaser"
+    }
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -20,16 +20,11 @@ module.exports = {
   module: {
     rules: [
       {
-				test: /\.js$/,
-				exclude: /node_modules/,
+				test: /\.(js|jsx?)$/,
+				exclude: [/node_modules/, /phaser-lib-custom/],
 				use: {
 					loader: "babel-loader",
 				},
-			},
-      {
-				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				use: "babel-loader",
 			},
       {
         test: /\.html$/,

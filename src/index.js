@@ -1,5 +1,5 @@
 // Vendor modules
-import Phaser from "./phaser-custom.min.js";
+import Phaser from "../phaser-lib-custom/phaser-custom.min.js";
 import React from "react";
 import ReactDOM from "react-dom";
 
