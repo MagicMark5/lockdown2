@@ -6,10 +6,8 @@
   "main": "src/index.js",
   "proxy": "http://localhost:3001",
   "scripts": {
-    "start": "node ./dist/server.js",
-    "build": "rm -rf dist && webpack --config webpack.config.js --mode development",
-    "buildClient": "webpack --config webpack.prod.js",
-    "devServer": "nodemon ./bin/www",
+    "start": "nodemon ./bin/www",
+    "build": "webpack --config webpack.prod.js",
     "devClient": "webpack serve --config webpack.dev.js --open",
     "db:reset": "node ./db/reset.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
