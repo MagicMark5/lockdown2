@@ -1,17 +1,17 @@
 // Game Entities
-import Player from "./Player";
-import Shots from './Shots';
+import Player from "../characters/Player";
+import Shots from '../entities/Shots';
 
 // Data Helpers
-import gameOver from './helpers/dataUtils/gameOver';
-import preloadAssets from './helpers/dataUtils/preloadAssets';
+import gameOver from '../helpers/dataUtils/gameOver';
+import preloadAssets from '../helpers/dataUtils/preloadAssets';
 
 // Zombie Helpers
-import zombieFactory from './helpers/zombieUtils/zombieFactory';
-import zombieDamage from './helpers/zombieUtils/zombieDamage';
-import zombieHit from './helpers/zombieUtils/zombieHit';
+import zombieFactory from '../helpers/zombieUtils/zombieFactory';
+import zombieDamage from '../helpers/zombieUtils/zombieDamage';
+import zombieHit from '../helpers/zombieUtils/zombieHit';
 
-import sceneEvents from './SceneEvents';
+import sceneEvents from '../utils/SceneEvents';
 
 export default class FinalBoss extends Phaser.Scene {
   constructor() {

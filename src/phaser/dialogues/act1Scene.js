@@ -1,4 +1,4 @@
-import sceneEvents from './SceneEvents';
+import sceneEvents from '../utils/SceneEvents';
 /* ------------------------------------ GameOver Scene  ------------------------ */
  
 export default class Act1 extends Phaser.Scene {

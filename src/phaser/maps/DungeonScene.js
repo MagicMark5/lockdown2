@@ -1,23 +1,23 @@
 // Game Entities
-import Player from "./Player";
-import Shots from './Shots';
+import Player from "../characters/Player";
+import Shots from '../entities/Shots';
 
 // Data Helpers
-import gameOver from './helpers/dataUtils/gameOver';
-import portalCallback from './helpers/dataUtils/portalCallback';
-import preloadAssets from './helpers/dataUtils/preloadAssets';
+import gameOver from '../helpers/dataUtils/gameOver';
+import portalCallback from '../helpers/dataUtils/portalCallback';
+import preloadAssets from '../helpers/dataUtils/preloadAssets';
 
 // Sample Helpers
-import sampleCollector from './helpers/sampleUtils/sampleCollector';
-import createSamples from './helpers/sampleUtils/createSamples';
+import sampleCollector from '../helpers/sampleUtils/sampleCollector';
+import createSamples from '../helpers/sampleUtils/createSamples';
 
 // Zombie Helpers
-import zombieFactory from './helpers/zombieUtils/zombieFactory';
-import zombieDamage from './helpers/zombieUtils/zombieDamage';
-import zombieHit from './helpers/zombieUtils/zombieHit';
+import zombieFactory from '../helpers/zombieUtils/zombieFactory';
+import zombieDamage from '../helpers/zombieUtils/zombieDamage';
+import zombieHit from '../helpers/zombieUtils/zombieHit';
 
-// Event emitter for React 
-import sceneEvents from './SceneEvents';
+// Event emitter for React GameStats component & Phaser GameUI util
+import sceneEvents from '../utils/SceneEvents';
 
 /* ------- Dungeon scene Class -------- */ 
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import sceneEvents from "../phaser/SceneEvents";
+import sceneEvents from "../phaser/utils/SceneEvents";
 
 export default function GameStats(props) {
 	const [inventory, setInventory] = useState(0);

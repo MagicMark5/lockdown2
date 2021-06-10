@@ -1,5 +1,4 @@
-import sceneEvents from "../../SceneEvents";
-
+import sceneEvents from "../../utils/SceneEvents";
 
 export default function sampleCollector(player, sample, thisScene) {
   thisScene.samplesTouched = true

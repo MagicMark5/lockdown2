@@ -1,4 +1,4 @@
-import Zombie from "../../Zombie";
+import Zombie from "../../characters/Zombie";
 
 export default function zombieFactory(scene, zombieArray, spritesheetKey, target, obstacles) {
   const zombieSpeed = 120;

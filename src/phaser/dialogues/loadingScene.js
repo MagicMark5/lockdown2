@@ -1,23 +1,23 @@
 /* ------------------------------------ Loading Screen Scene  ------------------------ */
 // images
-import title_bg from "./../assets/menu-images/title_bg.jpeg";
-import game_over from "./../assets/menu-images/gameover.png";
-import try_again from "./../assets/menu-images/tryagain.png";
-import yes from "./../assets/menu-images/yes.png";
-import no from "./../assets/menu-images/no.png";
-import skull from "./../assets/menu-images/skull.png";
-import options_button from "./../assets/menu-images/menuoptions.png";
-import play_button from "./../assets/menu-images/menuplay.png";
-import logo from "./../assets/menu-images/menuname.png";
-import player from "./../assets/characters/players/player.png";
-import act_1 from "./../assets/menu-images/act1.png";
-import complete from "./../assets/menu-images/complete.png";
-import spacebar from "./../assets/menu-images/spacebar.png";
-import forestportal from "./../assets/menu-images/forestportal.png";
+import title_bg from "./../../assets/menu-images/title_bg.jpeg";
+import game_over from "./../../assets/menu-images/gameover.png";
+import try_again from "./../../assets/menu-images/tryagain.png";
+import yes from "./../../assets/menu-images/yes.png";
+import no from "./../../assets/menu-images/no.png";
+import skull from "./../../assets/menu-images/skull.png";
+import options_button from "./../../assets/menu-images/menuoptions.png";
+import play_button from "./../../assets/menu-images/menuplay.png";
+import logo from "./../../assets/menu-images/menuname.png";
+import player from "./../../assets/characters/players/player.png";
+import act_1 from "./../../assets/menu-images/act1.png";
+import complete from "./../../assets/menu-images/complete.png";
+import spacebar from "./../../assets/menu-images/spacebar.png";
+import forestportal from "./../../assets/menu-images/forestportal.png";
 
 // sounds
-// import darkshadow from "./../assets/sounds/darkshadows.mp3";
-// import blood from "./../assets/sounds/bloodshed.mp3";
+// import darkshadow from "./../../assets/sounds/darkshadows.mp3";
+// import blood from "./../../assets/sounds/bloodshed.mp3";
 
 
 export default class loadingScene extends Phaser.Scene {

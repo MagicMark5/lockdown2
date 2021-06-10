@@ -1,4 +1,4 @@
-import sceneEvents from "../../SceneEvents";
+import sceneEvents from "../../utils/SceneEvents";
 
 export default function zombieHit(player, zombie) {
   //gets information to pass to the player bouncing back

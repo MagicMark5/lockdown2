@@ -1,26 +1,37 @@
+// Vendor modules
 import Phaser from "./phaser-custom.min.js";
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App.jsx";
-import Forest from "./phaser/forestScene";
-import Town from "./phaser/overworld";
-import Dungeon from "./phaser/DungeonScene";
-import FinalBoss from "./phaser/finalBoss";
-import loadingScene from "./phaser/loadingScene";
-import startMenu from "./phaser/startMenu";
-import Intro from "./phaser/intro";
-import GameOver from "./phaser/gameOverScene";
-import BossUnlock from "./phaser/bossunlockScene";
-import Winning from "./phaser/winningScene";
-import Act1 from "./phaser/act1Scene";
-import Timer from "./phaser/Timer";
-import GameUI from './phaser/GameUI';
 
-// styles
+// React Application
+import App from "./components/App.jsx";
+
+/* -------- Phaser Classes -------- */
+
+// Map Scenes
+import Forest from "./phaser/maps/forestScene";
+import Town from "./phaser/maps/overworld";
+import Dungeon from "./phaser/maps/DungeonScene";
+import FinalBoss from "./phaser/maps/finalBoss";
+// Dialogue Scenes
+import loadingScene from "./phaser/dialogues/loadingScene";
+import startMenu from "./phaser/dialogues/startMenu";
+import Intro from "./phaser/dialogues/intro";
+import GameOver from "./phaser/dialogues/gameOverScene";
+import BossUnlock from "./phaser/dialogues/bossunlockScene";
+import Winning from "./phaser/dialogues/winningScene";
+import Act1 from "./phaser/dialogues/act1Scene";
+// Game Utils
+import Timer from "./phaser/utils/Timer";
+import GameUI from './phaser/utils/GameUI';
+
+// Styles
 import "../main.scss";
 
+// Phaser Game Configuration
+
 const config = {
-  type: Phaser.AUTO,
+  type: Phaser.AUTO, // Will try WebGL renderer if supported, falls back to Canvas
     parent: 'phaser-example',
     width: 800,
     height: 600,
@@ -30,7 +41,7 @@ const config = {
             debug: false
         }
       },
-    scene: [ 
+    scene: [ // First scene in the array will be entry into the game
       loadingScene, 
       startMenu, 
       Intro, 
@@ -50,8 +61,11 @@ const config = {
     }
   };
 
+// Inserts game into div with id of 'phaser'
+
 const game = new Phaser.Game(config);
 
+// Render the React Application components into div with id of 'root'
 
 ReactDOM.render(
   <App />,

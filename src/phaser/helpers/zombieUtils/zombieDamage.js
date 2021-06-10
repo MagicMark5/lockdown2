@@ -1,4 +1,4 @@
-import sceneEvents from "../../SceneEvents";
+import sceneEvents from "../../utils/SceneEvents";
 
 export default function zombieDamage(zombie, shot, scene, player, bossRoom) {
   if (zombie.zombieData.health === 0) {

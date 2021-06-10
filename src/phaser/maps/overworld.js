@@ -1,25 +1,25 @@
-import testnpc from './testnpc'
-import { createNpcAnims } from './testnpcanims';
-
-import sceneEvents from './SceneEvents';
+// Event emitter for React GameStats component & Phaser GameUI util
+import sceneEvents from '../utils/SceneEvents';
 
 // Game Entities
-import Player from "./Player";
-import Shots from './Shots';
+import Player from "../characters/Player";
+import Shots from '../entities/Shots';
+import testnpc from '../characters/testnpc'
+import { createNpcAnims } from '../utils/testnpcanims';
 
 // Data Helpers
-import gameOver from './helpers/dataUtils/gameOver';
-import portalCallback from './helpers/dataUtils/portalCallback';
-import preloadAssets from './helpers/dataUtils/preloadAssets';
+import gameOver from '../helpers/dataUtils/gameOver';
+import portalCallback from '../helpers/dataUtils/portalCallback';
+import preloadAssets from '../helpers/dataUtils/preloadAssets';
 
 // Sample Helpers
-import sampleCollector from './helpers/sampleUtils/sampleCollector';
-import createSamples from './helpers/sampleUtils/createSamples';
+import sampleCollector from '../helpers/sampleUtils/sampleCollector';
+import createSamples from '../helpers/sampleUtils/createSamples';
 
 // Zombie Helpers
-import zombieFactory from './helpers/zombieUtils/zombieFactory';
-import zombieDamage from './helpers/zombieUtils/zombieDamage';
-import zombieHit from './helpers/zombieUtils/zombieHit';
+import zombieFactory from '../helpers/zombieUtils/zombieFactory';
+import zombieDamage from '../helpers/zombieUtils/zombieDamage';
+import zombieHit from '../helpers/zombieUtils/zombieHit';
 
 /* ------------------------------------ Overworld Scene Class ------------------------ */
 
