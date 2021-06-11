@@ -3,7 +3,7 @@ import React from "react";
 export default function Controls(props) {
 
   return (
-    <ul className="controls">
+    <ul className="controls sidetab">
       <li>W or ⬆ to move up</li>
       <li>A or ⬅ to move left</li>
       <li>S or ⬇ to move down</li>

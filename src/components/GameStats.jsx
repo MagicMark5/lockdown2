@@ -37,7 +37,7 @@ export default function GameStats(props) {
 	}, []);
 	if (danger === true){
 		return (
-			<ul className="gameStats">
+			<ul className="gameStats sidetab">
 				<li className="danger">Timer: {timer}</li>
 				<li>Zombie Kills: {killCount}</li>
 				<li>Score: {(inventory * 100) + (killCount * 500)} </li>
@@ -45,7 +45,7 @@ export default function GameStats(props) {
 		);
 	} else {
 		return (
-			<ul className="gameStats">
+			<ul className="gameStats sidetab">
 				<li>Timer: {timer}</li>
 				<li>Zombie Kills: {killCount}</li>
 				<li>Score: {(inventory * 100) + (killCount * 500)} </li>
