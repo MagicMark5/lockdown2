@@ -10,8 +10,7 @@
     "build": "webpack --config webpack.prod.js",
     "server": "npm run build && npm start",
     "devClient": "webpack serve --config webpack.dev.js --open",
-    "db:reset": "node ./db/reset.js",
-    "heroku-postbuild": "npm run build && npm start"
+    "db:reset": "node ./db/reset.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
