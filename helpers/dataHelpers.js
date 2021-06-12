@@ -27,6 +27,7 @@ const getGamesByUsers = (usersGames) => {
       }
       // update the games array for this user with game_sessions data
       gamesByUsers[game.user_id].games.push({
+          id: game.game_id,
           samples: game.samples, // number, maximum 36 
           kills: game.kills,
           score: game.score, 

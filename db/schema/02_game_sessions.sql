@@ -9,6 +9,6 @@ CREATE TABLE game_sessions(
     time INTEGER NOT NULL, 
     died BOOLEAN NOT NULL, 
     antidote BOOLEAN NOT NULL, 
-    mode VARCHAR(255) NOT NULL DEFAULT "medium",
+    mode VARCHAR(255) NOT NULL,
     user_id INTEGER REFERENCES users(id)
 );
