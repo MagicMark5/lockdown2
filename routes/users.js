@@ -91,9 +91,9 @@ module.exports = ({
     router.get('/highscores', (req, res) => {
         // GET 'api/users/highscores'
         getHighscores()
-            .then((scoresByUsn) => {
-                console.log(scoresByUsn)
-                res.json(scoresByUsn)
+            .then((highscores) => {
+                // returns array of top 10 game sessions ordered by score 
+                res.json(highscores)
             })
             .catch((err) => res.json({
                 error: err.message
