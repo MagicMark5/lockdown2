@@ -23,10 +23,10 @@ module.exports = (db) => {
           .catch((err) => err);
   }
 
-  const addUser = (firstName, lastName, email, password) => {
+  const addUser = (userName, avatar, email, password) => {
       const query = {
-          text: `INSERT INTO users (first_name, last_name, email, password) VALUES ($1, $2, $3, $4) RETURNING *` ,
-          values: [firstName, lastName, email, password]
+          text: `INSERT INTO users (username, avatar, email, password) VALUES ($1, $2, $3, $4) RETURNING *` ,
+          values: [userName, avatar, email, password]
       }
 
       return db.query(query)
@@ -34,12 +34,12 @@ module.exports = (db) => {
           .catch(err => err);
   }
 
-  const getUsersPosts = () => {
+  const getUsersGames = () => {
       const query = {
-          text: `SELECT users.id as user_id, first_name, last_name, email, posts.id as post_id, title, content
+          text: `SELECT users.id as user_id, username, avatar, email, game_sessions.id as game_id, score, died
       FROM users
-      INNER JOIN posts
-      ON users.id = posts.user_id`
+      INNER JOIN game_sessions
+      ON users.id = game_sessions.user_id`
       }
 
       return db.query(query)
@@ -52,6 +52,6 @@ module.exports = (db) => {
       getUsers,
       getUserByEmail,
       addUser,
-      getUsersPosts
+      getUsersGames
   };
 };
