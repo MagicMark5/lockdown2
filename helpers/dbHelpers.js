@@ -1,4 +1,5 @@
 module.exports = (db) => {
+
   const getUsers = () => {
       const query = {
           text: 'SELECT * FROM users',
@@ -23,6 +24,19 @@ module.exports = (db) => {
           .catch((err) => err);
   }
 
+  const getUserByUserName = username => {
+
+    const query = {
+        text: `SELECT * FROM users WHERE username = $1` ,
+        values: [username]
+    }
+
+    return db
+        .query(query)
+        .then(result => result.rows[0])
+        .catch((err) => err);
+  }
+
   const addUser = (userName, avatar, email, password) => {
       const query = {
           text: `INSERT INTO users (username, avatar, email, password) VALUES ($1, $2, $3, $4) RETURNING *` ,
@@ -36,10 +50,10 @@ module.exports = (db) => {
 
   const getUsersGames = () => {
       const query = {
-          text: `SELECT users.id as user_id, username, avatar, email, game_sessions.id as game_id, score, died
-      FROM users
-      INNER JOIN game_sessions
-      ON users.id = game_sessions.user_id`
+        text: `SELECT users.id as user_id, username, avatar, email, game_sessions.id as game_id, samples, kills, score, shots, time, died, antidote, mode
+            FROM users
+            INNER JOIN game_sessions
+            ON users.id = game_sessions.user_id`
       }
 
       return db.query(query)
@@ -51,6 +65,7 @@ module.exports = (db) => {
   return {
       getUsers,
       getUserByEmail,
+      getUserByUserName,
       addUser,
       getUsersGames
   };
