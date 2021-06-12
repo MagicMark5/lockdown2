@@ -48,18 +48,33 @@ module.exports = (db) => {
           .catch(err => err);
   }
 
+  // Get all users and their game sessions
   const getUsersGames = () => {
-      const query = {
+    const query = {
         text: `SELECT users.id as user_id, username, avatar, email, game_sessions.id as game_id, samples, kills, score, shots, time, died, antidote, mode
-            FROM users
-            INNER JOIN game_sessions
-            ON users.id = game_sessions.user_id`
-      }
+        FROM users
+        INNER JOIN game_sessions
+        ON users.id = game_sessions.user_id`
+    }
 
-      return db.query(query)
-          .then(result => result.rows)
-          .catch(err => err);
+    return db.query(query)
+        .then(result => result.rows)
+        .catch(err => err);
+  }
 
+  // Get highscores ordered by descending scores
+  const getHighscores = () => {
+    const query = {
+        text: `SELECT users.id as user_id, username, avatar, game_sessions.id as game_id, samples, kills, score, shots, time, died, antidote, mode
+        FROM users
+        INNER JOIN game_sessions
+        ON users.id = game_sessions.user_id
+        ORDER BY score DESC
+        LIMIT 10`
+    }
+    return db.query(query)
+    .then(result => result.rows)
+    .catch(err => err);
   }
 
   return {
@@ -67,6 +82,7 @@ module.exports = (db) => {
       getUserByEmail,
       getUserByUserName,
       addUser,
-      getUsersGames
+      getUsersGames,
+      getHighscores
   };
 };

@@ -9,12 +9,13 @@ module.exports = ({
   getUserByEmail,
   getUserByUserName,
   addUser,
-  getUsersGames
+  getUsersGames, 
+  getHighscores,
 }) => {
 
   /* All routes here are prepended by the '/users' router */
 
-  /* GET users listing. */
+  /* GET all users */
   router.get('/', (req, res) => {
       getUsers()
           .then((users) => res.json(users))
@@ -23,39 +24,18 @@ module.exports = ({
           }));
   });
 
-  router.get('/games', (req, res) => {
-    // 'api/users/games' route
-    // getUsersGames returns a JOIN of users and game_sessions tables
-    // 'usersGames', which is then formatted by getGamesByUsers
-    getUsersGames()
-        .then((usersGames) => {
-            const formattedGames = getGamesByUsers(usersGames);
-            // formattedGames will be an [] of values as follows
-            // { 
-            //   userId, number
-            //   username, ""
-            //   avatar, ""
-            //   email, ""
-            //   games [] // array of game sessions the user has played
-            // }
-            res.json(formattedGames);
-        })
-        .catch((err) => res.json({
-            error: err.message
-        }));
-  });
-
+  
   router.post('/', (req, res) => {
-
+      // POST 'api/users' to create a new user account
       const {
           username,
           avatar,
           email,
           password
-      } = req.body;
-
-      //Check if email already exists
-      getUserByEmail(email)
+        } = req.body;
+        
+        //Check if email already exists
+        getUserByEmail(email)
         .then(user => {
             if (user) {
                 res.json({
@@ -75,14 +55,50 @@ module.exports = ({
                     }
                 });
             }
-
+            
         })
         .then(newUser => res.json(newUser))
         .catch(err => res.json({
             error: err.message
         }));
+    });
+    
+    router.get('/games', (req, res) => {
+      // GET 'api/users/games' returns all users and their game sessions
+      // getUsersGames returns a JOIN of users and game_sessions tables
+      // 'usersGames', which is then formatted by getGamesByUsers
+      getUsersGames()
+          .then((usersGames) => {
+              console.log(usersGames);
+              const formattedGames = getGamesByUsers(usersGames);
+              // formattedGames will be an [] of values as follows
+              /* 
+              { 
+                userId, number
+                username, ""
+                avatar, ""
+                email, ""
+                games [] // array of game sessions the user has played
+              } 
+              */
+              res.json(formattedGames);
+          })
+          .catch((err) => res.json({
+              error: err.message
+          }));
+    });
 
-  })
+    router.get('/highscores', (req, res) => {
+        // GET 'api/users/highscores'
+        getHighscores()
+            .then((scoresByUsn) => {
+                console.log(scoresByUsn)
+                res.json(scoresByUsn)
+            })
+            .catch((err) => res.json({
+                error: err.message
+            }));
+    })
 
-  return router;
+    return router;
 };
