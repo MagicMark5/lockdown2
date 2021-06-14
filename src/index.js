@@ -20,7 +20,7 @@ import Intro from "./phaser/dialogues/intro";
 import GameOver from "./phaser/dialogues/gameOverScene";
 import BossUnlock from "./phaser/dialogues/bossunlockScene";
 import Winning from "./phaser/dialogues/winningScene";
-import Act1 from "./phaser/dialogues/act1Scene";
+import GameScore from "./phaser/dialogues/GameScore";
 // Game Utils
 import Timer from "./phaser/utils/Timer";
 import GameUI from './phaser/utils/GameUI';
@@ -43,6 +43,7 @@ const config = {
       },
     scene: [ // First scene in the array will be entry into the game
       loadingScene, 
+      GameScore,
       startMenu, 
       Intro, 
       Town, 
@@ -52,7 +53,6 @@ const config = {
       Boss, 
       BossUnlock, 
       Winning,
-      Act1,
       Timer,
       GameUI
     ],

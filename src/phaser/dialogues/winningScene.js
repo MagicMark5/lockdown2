@@ -15,7 +15,7 @@ You did it! Humanity is saved!`
 
 
 const textStyle = {
-  fontSize: 25,
+  fontSize: 32,
   lineSpacing:0,
   fontFamily: "VT323",
   color: "WHITE",
@@ -31,7 +31,7 @@ export default class Winning extends Phaser.Scene {
       this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
     }
 
-    create() {
+    create(data) {
 
       // camera transition effect
       this.cameras.main.fadeIn(5000);
@@ -41,9 +41,9 @@ export default class Winning extends Phaser.Scene {
       //load fonts
       let add = this.add;
       let tweens = this.tweens;
-      let input = this.input;
-      let renderer = this.renderer;
-      let scene = this.scene;
+      // let input = this.input;
+      // let renderer = this.renderer;
+      // let scene = this.scene;
 
       WebFont.load({
         google: {
@@ -131,18 +131,19 @@ export default class Winning extends Phaser.Scene {
       
       this.input.keyboard.once('keyup-SPACE', function () {
         // When starting the game fresh, we use this initial state
-        const data = {
-          comingFrom: "Intro",  
-          health: 500,
-          kills: 0,
-          inventory: [],
-          sampleLocations: {
-            "Dungeon": null,
-            "Town": null,
-            "Forest": null
-          }
-        };
-        this.scene.start('Act1', data);
+        // const data = {
+        //   comingFrom: "Intro",  
+        //   health: 500,
+        //   kills: 0,
+        //   inventory: [],
+        //   sampleLocations: {
+        //     "Dungeon": null,
+        //     "Town": null,
+        //     "Forest": null
+        //   }
+        // };
+        console.log(data);
+        this.scene.start('GameScore', data);
       }, this);
     }
 

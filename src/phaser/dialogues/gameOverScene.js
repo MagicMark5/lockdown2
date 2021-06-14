@@ -45,7 +45,7 @@ export default class GameOver extends Phaser.Scene {
     yesButton.on("pointerup", () => {
       sceneEvents.emit("player-death", data);
       //this.sound.play("blood")
-      this.scene.start("Intro", data)
+      this.scene.start("GameScore", data)
     })
 
     // takes you back to the start screen
@@ -60,7 +60,7 @@ export default class GameOver extends Phaser.Scene {
     })
       noButton.on("pointerup", () => {
       sceneEvents.emit("player-death", data);
-      this.scene.start("startMenu", data)
+      this.scene.start("GameScore", data)
     })
 
   

@@ -10,8 +10,6 @@ import options_button from "./../../assets/menu-images/menuoptions.png";
 import play_button from "./../../assets/menu-images/menuplay.png";
 import logo from "./../../assets/menu-images/menuname.png";
 import player from "./../../assets/characters/players/player.png";
-import act_1 from "./../../assets/menu-images/act1.png";
-import complete from "./../../assets/menu-images/complete.png";
 import spacebar from "./../../assets/menu-images/spacebar.png";
 import forestportal from "./../../assets/menu-images/forestportal.png";
 
@@ -64,10 +62,6 @@ export default class loadingScene extends Phaser.Scene {
         // this.load.audio("blood", blood)
 
         //Loading assets for the winning scene
-        this.load.image("act_1", act_1);
-
-        this.load.image("complete", complete);
-
         this.load.image("spacebar", spacebar);
 
         //load asset for forest portal
@@ -134,7 +128,7 @@ export default class loadingScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start('startMenu')
+        this.scene.start('GameScore')
     }
     
 };
