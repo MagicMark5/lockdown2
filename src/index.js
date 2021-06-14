@@ -51,8 +51,8 @@ const config = {
       Boss, 
       BossUnlock, 
       Winning,
-      GameOver, 
       GameScore,
+      GameOver, 
       Timer,
       GameUI
     ],
