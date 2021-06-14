@@ -23,12 +23,20 @@ export default class GameScore extends Phaser.Scene {
 
     const debug = false;
 
-    const {samples, kills, score} = calculateScore(data); 
+    const {
+      health, // health remaining /500
+      samples, // total samples collected
+      kills, // total zombie kills
+      antidote, // whether or not antidote was obtained
+      score // final calculated score 
+    } = calculateScore(data); 
 
     // playerScore template string columns are separated by tabs
     const playerScore = `\n
+    HEALTH:   ${health}/500
     SAMPLES:  ${samples}/36
     KILLS:    ${kills}
+    ANTIDOTE: ${antidote ? `+10000` : `None`}
     SCORE:    ${score}\n
     Log in or register for free to save your score!`
     

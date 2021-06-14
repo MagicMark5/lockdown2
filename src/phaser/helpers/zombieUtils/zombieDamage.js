@@ -37,20 +37,22 @@ const killZombie = (zombie, scene, map, tileset, player, key) => {
 
 const renderChest = (scene, map, tileset, player) => {
   const chest = map.createLayer("Chest", tileset, 0, 0);
+  // Set collider between player and chest to trigger "Winning" scene
   chest.setCollisionBetween(0, 500);
   scene.physics.add.collider(chest, player, (player, tile) => { 
+    // pass in player so that GameScore can calculate score from player.gameData
     getAntidote(scene, player);
   });
 }
 
 const getAntidote = (scene, player) => {
-  console.log("YOU GOT THE ANTIDOTE");
   // Transition to "Winning" Scene, pass in player.gameData for GameScore
   const data = {
-    comingFrom: "Boss",  
+    comingFrom: "FinalBoss",  
     health: player.gameData.health,
     kills: player.gameData.kills,
     inventory: player.gameData.inventory,
+    antidote: true, // score bonus for retrieving the antidote
     sampleLocations: {
       "Dungeon": null,
       "Town": null,

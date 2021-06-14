@@ -7,12 +7,12 @@ export default function gameOver(player, thisScene) {
     comingFrom: "GameOver",  
     health: player.gameData.health,
     inventory: player.gameData.inventory,
+    kills: player.gameData.kills,
     sampleLocations: {
       "Dungeon": null,
       "Town": null,
       "Forest": null
     },
-    kills: player.gameData.kills
   };
 
   // cut to GameOver Scene here instead of startMenu?

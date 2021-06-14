@@ -130,19 +130,7 @@ export default class Winning extends Phaser.Scene {
       this.scene.stop("GameUI");
       
       this.input.keyboard.once('keyup-SPACE', function () {
-        // When starting the game fresh, we use this initial state ie. "Intro"
-        // const data = {
-        //   comingFrom: "Intro",  
-        //   health: 500,
-        //   kills: 0,
-        //   inventory: [],
-        //   sampleLocations: {
-        //     "Dungeon": null,
-        //     "Town": null,
-        //     "Forest": null
-        //   }
-        // };
-        // console.log(data);
+        // Pass game data to GameScore (from create function parameter)
         this.scene.start('GameScore', data);
       }, this);
     }

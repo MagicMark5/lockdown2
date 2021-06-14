@@ -4,8 +4,11 @@ import sceneEvents from "../phaser/utils/SceneEvents";
 export default function GameStats(props) {
 	const [inventory, setInventory] = useState(0);
 	const [killCount, setKillCount] = useState(0);
+	const [finalScore, setFinalScore] = useState(null);
 	const [timer, setTimer] = useState('00:00');
 	const [danger, setDanger] = useState(0);
+
+	const score = finalScore || (inventory * 100) + (killCount * 500);
 
 	useEffect(() => {
 
@@ -26,6 +29,7 @@ export default function GameStats(props) {
 		sceneEvents.on('reset-score', (data) => {
 			setInventory(0);
 			setKillCount(0);
+			setFinalScore(null);
 			setTimer('00:00');
 		});
 
@@ -34,13 +38,19 @@ export default function GameStats(props) {
 			setTimer(timer);
 		});
 
+		// final score is calculated in
+		// phaser/helpers/dataUtils/calculateScore.js at end game
+		sceneEvents.on('final-score', (finalScore) => {
+			setFinalScore(finalScore);			
+		})
+
 	}, []);
 	if (danger === true){
 		return (
 			<ul className="gameStats sidetab">
 				<li className="danger">Timer: {timer}</li>
 				<li>Zombie Kills: {killCount}</li>
-				<li>Score: {(inventory * 100) + (killCount * 500)} </li>
+				<li>Score: {score} </li>
 			</ul>
 		);
 	} else {
@@ -48,7 +58,7 @@ export default function GameStats(props) {
 			<ul className="gameStats sidetab">
 				<li>Timer: {timer}</li>
 				<li>Zombie Kills: {killCount}</li>
-				<li>Score: {(inventory * 100) + (killCount * 500)} </li>
+				<li>Score: {score} </li>
 			</ul>
 		);
 	}
