@@ -125,6 +125,9 @@ export default class Winning extends Phaser.Scene {
       //stop timer
       this.scene.stop("Timer");
       this.scene.stop("GameUI");
+
+      // Render "Press SPACEBAR to continue..."
+      this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.5 + 100, "spacebar").setDepth(1)
       
       this.input.keyboard.once('keyup-SPACE', function () {
         // Pass game data to GameScore (from create function parameter)

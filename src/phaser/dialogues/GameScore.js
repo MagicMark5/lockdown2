@@ -38,7 +38,7 @@ export default class GameScore extends Phaser.Scene {
     KILLS:    ${kills}
     ANTIDOTE: ${antidote ? `+10000` : `None`}
     SCORE:    ${score}\n
-    Log in or register for free to save your score!`
+    `
     
     const textStyle = {
       fontSize: 32,
@@ -77,7 +77,7 @@ export default class GameScore extends Phaser.Scene {
 
         const totalLineHeight = lineHeight + lineSpacing;
         
-        this.add
+        this.add // render text in a grid position
             .grid(
             text.x,
             text.y,
@@ -92,30 +92,80 @@ export default class GameScore extends Phaser.Scene {
           )
           .setOrigin(0, 0)
           .setVisible(debug)
+      } // end active
+    }); // end WebFont.load
 
+
+    // Plan: Give options to login/register/save highscore or play again without saving, with yes/no buttons
+    this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.75, "try_again").setDepth(1)
+
+    let yesButton = this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.5 + 30, "yes").setDepth(1)
+
+    let noButton = this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.5 + 100, "no").setDepth(1)
+    
+    let hoverSprite2 = this.add.image(100,100, "skull")
+    hoverSprite2.setScale(1)
+    hoverSprite2.setVisible(false)
+
+    //start music again
+    // this.game.sound.stopAll();
+    // this.sound.play("darkshadow", {
+    //   loop: true
+    // })
+
+    // Reset local gameData
+    const resetData = {
+      comingFrom: "Intro",  
+      health: 500,
+      kills: 0,
+      inventory: [],
+      sampleLocations: {
+        "Dungeon": null,
+        "Town": null,
+        "Forest": null
       }
-    });
+    };
 
-    this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.5 + 100, "spacebar").setDepth(1)
+    // takes you to the startMenu scene again, with resetData (with either yes or no)
 
-    this.input.keyboard.once('keyup-SPACE', function () {    
+    yesButton.setInteractive();
+    yesButton.on("pointerover", () => {
+      hoverSprite2.setVisible(true)
+      hoverSprite2.x = yesButton.x - yesButton.width * 1.5;
+      hoverSprite2.y = yesButton.y;
+    })
+    yesButton.on("pointerout", () => {
+      hoverSprite2.setVisible(false)
+    })
+    yesButton.on("pointerup", () => {
+      sceneEvents.emit("player-death", data);
+      // Reset GameStats component 
+      sceneEvents.emit('reset-score'); 
+      //this.sound.play("blood")
+      this.scene.start("startMenu", resetData);
+    })
+
+    noButton.setInteractive();
+    noButton.on("pointerover", () => {
+      hoverSprite2.setVisible(true)
+      hoverSprite2.x = noButton.x - noButton.width * 2.1;
+      hoverSprite2.y = noButton.y;
+    })
+    
+    noButton.on("pointerout", () => {
+      hoverSprite2.setVisible(false)
+    })
+    
+    noButton.on("pointerup", () => {
+      sceneEvents.emit("player-death", data);
       // Reset GameStats component 
       sceneEvents.emit('reset-score');  
-      // Reset local gameData
-      const data = {
-        comingFrom: "Intro",  
-        health: 500,
-        kills: 0,
-        inventory: [],
-        sampleLocations: {
-          "Dungeon": null,
-          "Town": null,
-          "Forest": null
-        }
-      };
-      console.log(data);
-      this.scene.start('startMenu', data);
-    }, this);
+      // Return to startMenu with gameData reset
+      this.scene.start("startMenu", resetData)
+    })
+
+
+    
   
   }
 }
