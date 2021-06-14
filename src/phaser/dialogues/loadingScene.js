@@ -128,7 +128,7 @@ export default class loadingScene extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start('GameScore')
+        this.scene.start('Intro')
     }
     
 };

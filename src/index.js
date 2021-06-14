@@ -43,16 +43,16 @@ const config = {
       },
     scene: [ // First scene in the array will be entry into the game
       loadingScene, 
-      GameScore,
       startMenu, 
       Intro, 
       Town, 
       Forest, 
       Dungeon, 
-      GameOver, 
       Boss, 
       BossUnlock, 
       Winning,
+      GameOver, 
+      GameScore,
       Timer,
       GameUI
     ],
