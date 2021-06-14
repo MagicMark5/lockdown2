@@ -41,9 +41,6 @@ export default class Winning extends Phaser.Scene {
       //load fonts
       let add = this.add;
       let tweens = this.tweens;
-      // let input = this.input;
-      // let renderer = this.renderer;
-      // let scene = this.scene;
 
       WebFont.load({
         google: {

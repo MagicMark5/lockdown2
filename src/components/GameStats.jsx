@@ -40,7 +40,7 @@ export default function GameStats(props) {
 			setTimer(timer);
 		});
 
-		// final score is calculated in
+		// final score is calculated & emitted from
 		// phaser/helpers/dataUtils/calculateScore.js at end game
 		sceneEvents.on('final-score', (finalScore) => {
 			setFinalScore(finalScore);			
