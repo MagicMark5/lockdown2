@@ -3,7 +3,7 @@
 const getGamesByUsers = (usersGames) => {
   const gamesByUsers = {};
   
-  // keys of gamesByUsers will be user_id
+  // keys of gamesByUsers {} will be user_id
   // This function returns Object.values of gamesByUsers, which will be as follows
   // { 
   //   userId, number
