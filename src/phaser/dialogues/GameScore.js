@@ -91,9 +91,23 @@ export default class GameScore extends Phaser.Scene {
     this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.5 + 100, "spacebar").setDepth(1)
 
     this.input.keyboard.once('keyup-SPACE', function () {    
-          sceneEvents.emit('reset-score');  
-          this.scene.start('startMenu', data);
-      }, this);
+      // Reset GameStats component 
+      sceneEvents.emit('reset-score');  
+      // Reset local gameData
+      const data = {
+        comingFrom: "Intro",  
+        health: 500,
+        kills: 0,
+        inventory: [],
+        sampleLocations: {
+          "Dungeon": null,
+          "Town": null,
+          "Forest": null
+        }
+      };
+      console.log(data);
+      this.scene.start('startMenu', data);
+    }, this);
   
   }
 }

@@ -48,17 +48,18 @@ export default class GameOver extends Phaser.Scene {
       this.scene.start("GameScore", data)
     })
 
-    // takes you back to the start screen
     noButton.setInteractive();
     noButton.on("pointerover", () => {
       hoverSprite2.setVisible(true)
       hoverSprite2.x = noButton.x - noButton.width * 2.1;
       hoverSprite2.y = noButton.y;
     })
-      noButton.on("pointerout", () => {
+    noButton.on("pointerout", () => {
       hoverSprite2.setVisible(false)
     })
-      noButton.on("pointerup", () => {
+    
+    // takes you to GameScore scene
+    noButton.on("pointerup", () => {
       sceneEvents.emit("player-death", data);
       this.scene.start("GameScore", data)
     })

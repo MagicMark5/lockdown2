@@ -15,7 +15,7 @@ You did it! Humanity is saved!`
 
 
 const textStyle = {
-  fontSize: 32,
+  fontSize: 25,
   lineSpacing:0,
   fontFamily: "VT323",
   color: "WHITE",
@@ -130,7 +130,7 @@ export default class Winning extends Phaser.Scene {
       this.scene.stop("GameUI");
       
       this.input.keyboard.once('keyup-SPACE', function () {
-        // When starting the game fresh, we use this initial state
+        // When starting the game fresh, we use this initial state ie. "Intro"
         // const data = {
         //   comingFrom: "Intro",  
         //   health: 500,
@@ -142,7 +142,7 @@ export default class Winning extends Phaser.Scene {
         //     "Forest": null
         //   }
         // };
-        console.log(data);
+        // console.log(data);
         this.scene.start('GameScore', data);
       }, this);
     }

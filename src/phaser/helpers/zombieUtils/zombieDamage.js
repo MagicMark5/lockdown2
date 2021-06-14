@@ -39,13 +39,24 @@ const renderChest = (scene, map, tileset, player) => {
   const chest = map.createLayer("Chest", tileset, 0, 0);
   chest.setCollisionBetween(0, 500);
   scene.physics.add.collider(chest, player, (player, tile) => { 
-    getAntidote(scene);
+    getAntidote(scene, player);
   });
 }
 
-const getAntidote = (scene) => {
+const getAntidote = (scene, player) => {
   console.log("YOU GOT THE ANTIDOTE");
-  // Transition to Game Over "You Won" Scene
-  scene.scene.start("Winning");
+  // Transition to "Winning" Scene, pass in player.gameData for GameScore
+  const data = {
+    comingFrom: "Boss",  
+    health: player.gameData.health,
+    kills: player.gameData.kills,
+    inventory: player.gameData.inventory,
+    sampleLocations: {
+      "Dungeon": null,
+      "Town": null,
+      "Forest": null
+    }
+  };
+  scene.scene.start("Winning", data);
   scene.scene.stop("FinalBoss");
 };

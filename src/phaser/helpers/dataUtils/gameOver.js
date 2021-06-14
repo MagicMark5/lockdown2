@@ -1,5 +1,3 @@
-import sceneEvents from "../../utils/SceneEvents";
-
 export default function gameOver(player, thisScene) {
   //thisScene.game.sound.stopAll();
 
