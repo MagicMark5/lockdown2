@@ -6,7 +6,7 @@ export default function GameStats(props) {
 	const [killCount, setKillCount] = useState(0);
 	const [finalScore, setFinalScore] = useState(null);
 	const [timer, setTimer] = useState('00:00');
-	const [danger, setDanger] = useState(0);
+	const [danger, setDanger] = useState(false);
 
 	const score = finalScore || (inventory * 100) + (killCount * 500);
 
@@ -33,7 +33,9 @@ export default function GameStats(props) {
 			setTimer('00:00');
 		});
 
-		sceneEvents.on('timer', (timer, danger)=>{
+		sceneEvents.on('timer', (timer, danger) => {
+			// danger is set to true and passed in as true when 60 seconds remain or less
+			// timer css color is changed to red when danger is true
 			setDanger(danger);
 			setTimer(timer);
 		});
@@ -45,22 +47,12 @@ export default function GameStats(props) {
 		})
 
 	}, []);
-	if (danger === true){
-		return (
-			<ul className="gameStats sidetab">
-				<li className="danger">Timer: {timer}</li>
-				<li>Zombie Kills: {killCount}</li>
-				<li>Score: {score} </li>
-			</ul>
-		);
-	} else {
-		return (
-			<ul className="gameStats sidetab">
-				<li>Timer: {timer}</li>
-				<li>Zombie Kills: {killCount}</li>
-				<li>Score: {score} </li>
-			</ul>
-		);
-	}
-	
+
+	return (
+		<ul className="gameStats sidetab">
+			<li className={danger ? "danger" : "none"}>Timer: {timer}</li>
+			<li>Zombie Kills: {killCount}</li>
+			<li>Score: {score} </li>
+		</ul>
+	)	
 }
