@@ -212,6 +212,7 @@ export default class Town extends Phaser.Scene {
     }
 
     this.zombies.forEach(z => z.update());
+
     if (this.player.body.embedded) {
       this.player.body.touching.none = false;
     }

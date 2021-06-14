@@ -1,10 +1,10 @@
+import sceneEvents from "../../utils/SceneEvents";
+
 export default function gameOver(player, thisScene) {
   //thisScene.game.sound.stopAll();
 
   // Reset sample locations in all scenes
-  
-  // Change this to player game data for highscores!
-  // For now we are resetting the data for replays
+  // Pass in player.gameData for GameScore and highscores
   const data = {
     comingFrom: "GameOver",  
     health: player.gameData.health,

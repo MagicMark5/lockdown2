@@ -31,8 +31,6 @@ const getGamesByUsers = (usersGames) => {
           samples: game.samples, // number, maximum 36 
           kills: game.kills,
           score: game.score, 
-          shots: game.shots, 
-          time: game.time, // seconds remaining in the game (starts from 300)
           died: game.died, // boolean if the player died
           antidote: game.antidote, // boolean if they won the game
           mode: game.mode // default to 'medium'

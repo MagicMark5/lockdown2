@@ -5,8 +5,6 @@ CREATE TABLE game_sessions(
     samples INTEGER NOT NULL,
     kills INTEGER NOT NULL,
     score INTEGER NOT NULL, 
-    shots INTEGER NOT NULL,
-    time INTEGER NOT NULL, 
     died BOOLEAN NOT NULL, 
     antidote BOOLEAN NOT NULL, 
     mode VARCHAR(255) NOT NULL,
