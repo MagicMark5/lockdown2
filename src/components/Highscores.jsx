@@ -3,8 +3,6 @@ import sceneEvents from "../phaser/utils/SceneEvents";
 
 export default function Highscores(props) {
 	
-
-
   return (
     <ul className="highScores sidetab">
       <li>Highscores</li>
@@ -12,5 +10,4 @@ export default function Highscores(props) {
       <li>Viper59: 20112</li>
     </ul>
   );
-	
 }

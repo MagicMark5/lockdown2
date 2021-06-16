@@ -1,40 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+$font-stack: 'Press Start 2P', Verdana, Geneva, Tahoma, sans-serif;
+$canvas_width: 60vw;
+$canvas_height: 0.75 * $canvas_width;
+
 body {
   background-color: black;
   color: white;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
+// Phaser game window
 canvas {
   border: 3px solid white;
-  border-radius: 0 20px 20px 20px;
+  border-radius: 20px 20px 20px 20px;
+  width: $canvas_width;
+  height: $canvas_height;
 }
+
+// React Application
+#root {
+  height: $canvas_height;
+  margin-right: 1em;
+  ul {
+    list-style: none;
+  }
+}
+
+nav {
+  margin-bottom: 2em;
+  font-family: $font-stack;
+  font-size: 0.8em;
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .login {
+    justify-content: space-evenly;
+    margin: 2em;
+  }
+}
+
+
 
 .gameSidebar {
   display: flex; 
   flex-direction: column;
   width: 100%;
+  .sidetab {
+    font-size: 20px;
+    font-family: $font-stack;
+    line-height: 1.5em;
+    border: 3px solid white;
+    // border-right: 0;
+    border-radius: 20px 20px 20px 20px; // top-left top-right bottom-right bottom-left
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 
-.sidetab {
-  font-size: 20px;
-  font-family: 'Press Start 2P', Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1.5em;
-  list-style-type: none;
-  border: 3px solid white;
-  border-right: 0;
-  border-radius: 20px 0 0 20px; // top-left top-right bottom-right bottom-left
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
 
 
-
-// Sidetabs 
+// Sidetabs Children
 
 .gameStats {
   // danger class added to timer when there is 1 minute remaining

@@ -61,7 +61,7 @@ const config = {
     }
   };
 
-// Inserts game into div with id of 'phaser'
+// Inserts game into a <canvas> element
 
 const game = new Phaser.Game(config);
 
