@@ -7,17 +7,19 @@ import Navigation from "./Navigation.jsx";
 import LoginNav from "./LoginNav.jsx";
 
 export default function App(props) {
-	const [gameSession, setGameSession] = useState(null);
+	const [gameSession, setGameSession] = useState({});
+	const [highscores, setHighscores] = useState([]);
 
 	// retrieve highscores from db on first render
 	// update highscores when post request to insert a game session into db is successful
 	// then setGameSession will update gameSession state with new game session
   useEffect(() => {
     if (gameSession) {
-      // post query to shoppies-backend on App re-render / when the query changes
       axios.get(`api/users/highscores`)
       .then(res => {
-        console.log(res.data);
+				// response from server is game sessions array (length 10) sorted by score
+        // give sorted array of {} to <Highscores> as props.scores
+				setHighscores(res.data);
       })
       .catch(e => {
         console.log(e);
@@ -30,7 +32,7 @@ export default function App(props) {
 			<Navigation />
 			<div className="gameSidebar">
 				<GameStats />
-				<Highscores />
+				<Highscores scores={highscores}/>
 				<Controls />
 			</div>
 			<LoginNav />

@@ -75,9 +75,22 @@ nav {
     color: red;
   }
 }
+
 .highScores {
   border-top: 0;
+  .table-title {
+    color: teal;
+    text-decoration: underline;
+  }
 }
+// highscores table
+tbody{
+  tr {
+    display: flex; 
+    justify-content: space-between;
+  }
+}
+
 .controls {
   border-top: 0;
 }

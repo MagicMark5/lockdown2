@@ -1,13 +1,27 @@
-import React, {useState, useEffect} from "react";
-import sceneEvents from "../phaser/utils/SceneEvents";
+import React from "react";
 
 export default function Highscores(props) {
+  const { scores } = props; // destructure sorted scores []
+
+  // parse scores data into table <tr> and <td> with 
+  // <th> of avatar, username, score
+  const scoreRows = scores.map(game => {
+    return (
+      <tr>
+        <td>{game.username}</td>
+        <td>{game.score}</td>
+      </tr>
+    )
+  })
 	
   return (
-    <ul className="highScores sidetab">
-      <li>Highscores</li>
-      <li>Bomber007: 23413</li>
-      <li>Viper59: 20112</li>
-    </ul>
+    <table className="highScores sidetab">
+      <thead>
+        <th className="table-title">Top Scores</th>
+      </thead>
+      <tbody>
+        {scoreRows}
+      </tbody>
+    </table>
   );
 }
