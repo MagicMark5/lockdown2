@@ -29,6 +29,10 @@ export default class GameScore extends Phaser.Scene {
         score // final calculated score 
       } = calculateScore(data); 
 
+      // Default values
+      const died = !antidote; // boolean, true is either time-out or 0 health,
+      const mode = "medium"; // default difficulty (not yet implemented)
+
       // playerScore template string columns are separated by tabs
       const playerScore = `\n
       HEALTH:   ${health}/500
@@ -116,11 +120,12 @@ export default class GameScore extends Phaser.Scene {
         hoverSprite2.setVisible(false)
       })
       yesButton.on("pointerup", () => {
-        sceneEvents.emit("player-death", data);
+        sceneEvents.emit("save-game", { samples, kills, score, died, antidote, mode });
+        // sceneEvents.emit("player-death", data);
         // Reset GameStats component 
-        sceneEvents.emit('reset-score'); 
+        // sceneEvents.emit('reset-score'); 
         //this.sound.play("blood")
-        this.scene.start("startMenu", resetData);
+        // this.scene.start("startMenu", resetData);
       })
 
       noButton.setInteractive();

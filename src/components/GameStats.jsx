@@ -1,7 +1,14 @@
 import React, {useState, useEffect} from "react";
+import axios from "axios";
 import sceneEvents from "../phaser/utils/SceneEvents";
 
 export default function GameStats(props) {
+	// saveGame is setGameSession in App.jsx 
+	// to trigger another fetch of highscores
+	// after succesful post to 'api/games' 
+	const { saveGame } = props;
+
+
 	const [inventory, setInventory] = useState(0);
 	const [killCount, setKillCount] = useState(0);
 	const [finalScore, setFinalScore] = useState(null);
@@ -24,6 +31,7 @@ export default function GameStats(props) {
 			setInventory(data.inventory.length);
 			setKillCount(data.kills);
 			setTimer('00:00');
+			setDanger(false);
 		});
 
 		sceneEvents.on('reset-score', (data) => {
@@ -31,6 +39,7 @@ export default function GameStats(props) {
 			setKillCount(0);
 			setFinalScore(null);
 			setTimer('00:00');
+			setDanger(false);
 		});
 
 		sceneEvents.on('timer', (timer, danger) => {
@@ -44,6 +53,25 @@ export default function GameStats(props) {
 		// phaser/helpers/dataUtils/calculateScore.js at end game
 		sceneEvents.on('final-score', (finalScore) => {
 			setFinalScore(finalScore);			
+		})
+
+		sceneEvents.on('save-game', (gameData) => {
+			// make post request to 'api/games' to insert game session data
+			// request body { samples, kills, score, died, antidote, mode }
+			axios.post('api/games', gameData)
+				.then(res => {
+					console.log(res);
+					saveGame(res);
+					// reset score, timer, and timer text colour
+					setInventory(0);
+					setKillCount(0);
+					setFinalScore(null);
+					setTimer('00:00');
+					setDanger(false);
+				})
+				.error(err => {
+					console.log(err);
+				})
 		})
 
 	}, []);

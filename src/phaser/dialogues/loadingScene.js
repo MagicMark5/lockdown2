@@ -128,14 +128,15 @@ export default class loadingScene extends Phaser.Scene {
     }
 
     create() {
-        const data = {
-            comingFrom: "loading",  // string
-            health: 500, // number
-            inventory: ["a", "b", "c"], // []
-            sampleLocations: {}, // { [], [], [] }
-            kills: 10 // number
-        };
-        this.scene.start('GameScore', data);
+        // example gameData for post testing
+        // const data = {
+        //     comingFrom: "loading",  // string
+        //     health: 500, // number
+        //     inventory: ["a", "b", "c"], // []
+        //     sampleLocations: {}, // { [], [], [] }
+        //     kills: 10 // number
+        // };
+        this.scene.start('Intro');
     }
     
 };

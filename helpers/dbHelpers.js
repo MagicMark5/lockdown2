@@ -65,7 +65,7 @@ module.exports = (db) => {
   // Get highscores ordered by descending scores
   const getHighscores = () => {
     const query = {
-        text: `SELECT users.id as user_id, username, avatar, game_sessions.id as game_id, samples, kills, score, shots, time, died, antidote, mode
+        text: `SELECT users.id as user_id, username, avatar, game_sessions.id as game_id, samples, kills, score, died, antidote, mode
         FROM users
         INNER JOIN game_sessions
         ON users.id = game_sessions.user_id
@@ -73,8 +73,8 @@ module.exports = (db) => {
         LIMIT 10`
     }
     return db.query(query)
-    .then(result => result.rows)
-    .catch(err => err);
+            .then(result => result.rows)
+            .catch(err => err);
   }
 
   // POST 'api/games' helper to insert gameData into game_sessions table
