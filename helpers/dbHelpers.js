@@ -77,12 +77,41 @@ module.exports = (db) => {
     .catch(err => err);
   }
 
+  // POST 'api/games' helper to insert gameData into game_sessions table
+  const insertGameSession = (gameData, userID) => {
+    // assemble SQL query parameters with gameData, which comes from req.body
+    const {samples, kills, score, died, antidote, mode} = gameData;
+    const queryParams = [
+        samples,
+        kills, 
+        score, 
+        died,
+        antidote,
+        mode, 
+        userID
+    ];
+    // assemble sql query for insert into game_sessions table with params
+    const queryString = `
+    INSERT INTO game_sessions(samples, kills, score, died, antidote, mode, user_id)
+    VALUES ($1, $2, $3, $4, $5, $6, $7);
+    `;
+    // Insert into game_sessions and return db response
+    return db.query(queryString, queryParams)
+        .then((insertRes) => {
+            console.log("Successful insertion", insertRes.rows);
+            return insertRes.rows;
+        })
+        .catch((err) => console.error("query insert error:", err));
+  }
+  
+
   return {
       getUsers,
       getUserByEmail,
       getUserByUserName,
       addUser,
       getUsersGames,
-      getHighscores
+      getHighscores,
+      insertGameSession
   };
 };

@@ -25,8 +25,8 @@ module.exports = ({
   });
 
   
+  /* POST 'api/users' to create a new user account */
   router.post('/', (req, res) => {
-      // POST 'api/users' to create a new user account
       const {
           username,
           avatar,

@@ -1,5 +1,5 @@
 INSERT INTO
-game_sessions(samples, kills, score, time, died, antidote, mode, user_id)
+game_sessions(samples, kills, score, died, antidote, mode, user_id)
 VALUES
     (
         36, 
