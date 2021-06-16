@@ -10,7 +10,7 @@ This starts webpack-dev-server. Your browser will open and go to `http://localho
 
 ### Serve the full application (Node/Express back-end & Phaser Front-End)
 
-1) Run `npm run server` 
+1) Run `npm run devServer` 
 * This command will bundle the client-side code into a `dist` folder and then serve the dist directory at `http://localhost:3001`
 
 2) Go to `http://localhost:3001` to play the game on the server
