@@ -63,6 +63,8 @@ export default function GameStats(props) {
 				.then(res => {
 					// setGameSession in App.jsx to re-render highscores
 					saveGame(res.data);
+					// Reset score
+					sceneEvents.emit('reset-score');  
 				})
 				.catch(err => {
 					console.log(err);
