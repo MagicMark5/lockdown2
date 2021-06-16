@@ -58,18 +58,13 @@ export default function GameStats(props) {
 		sceneEvents.on('save-game', (gameData) => {
 			// make post request to 'api/games' to insert game session data
 			// request body { samples, kills, score, died, antidote, mode }
+			console.log(gameData);
 			axios.post('api/games', gameData)
 				.then(res => {
-					console.log(res);
-					saveGame(res);
-					// reset score, timer, and timer text colour
-					setInventory(0);
-					setKillCount(0);
-					setFinalScore(null);
-					setTimer('00:00');
-					setDanger(false);
+					// setGameSession in App.jsx to re-render highscores
+					saveGame(res.data);
 				})
-				.error(err => {
+				.catch(err => {
 					console.log(err);
 				})
 		})

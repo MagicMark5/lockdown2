@@ -17,7 +17,6 @@ export default function App(props) {
     if (gameSession) {
       axios.get(`api/users/highscores`)
       .then(res => {
-				console.log(res.data);
 				// response from server is game sessions array (length 10) sorted by score
         // give sorted array of {} to <Highscores> as props.scores
 				setHighscores(res.data);

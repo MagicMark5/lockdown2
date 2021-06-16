@@ -58,7 +58,7 @@ export default class GameScore extends Phaser.Scene {
       const saveTextY = this.game.renderer.height / 1.75;
       
       // camera transition effect
-      this.cameras.main.fadeIn(3000);
+      // this.cameras.main.fadeIn(3000);
       // Set title image in background
       this.add.image(0,0, "title_bg").setOrigin(0).setDepth(0)
       
@@ -121,11 +121,9 @@ export default class GameScore extends Phaser.Scene {
       })
       yesButton.on("pointerup", () => {
         sceneEvents.emit("save-game", { samples, kills, score, died, antidote, mode });
-        // sceneEvents.emit("player-death", data);
-        // Reset GameStats component 
-        // sceneEvents.emit('reset-score'); 
         //this.sound.play("blood")
-        // this.scene.start("startMenu", resetData);
+        // Return to startMenu
+        this.scene.start("startMenu", resetData);
       })
 
       noButton.setInteractive();

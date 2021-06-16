@@ -8,7 +8,7 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "build": "webpack --config webpack.prod.js",
-    "server": "npm run build && npm start",
+    "devServer": "webpack --config webpack.dev.js && npm start",
     "devClient": "webpack serve --config webpack.dev.js --open",
     "db:reset": "node ./db/reset.js"
   },

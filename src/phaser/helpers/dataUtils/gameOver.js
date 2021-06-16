@@ -8,6 +8,7 @@ export default function gameOver(player, thisScene) {
     health: player.gameData.health,
     inventory: player.gameData.inventory,
     kills: player.gameData.kills,
+    antidote: false, // set antidote to false as player either died or time ran out
     sampleLocations: {
       "Dungeon": null,
       "Town": null,
