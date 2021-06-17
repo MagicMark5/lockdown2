@@ -42,6 +42,7 @@ canvas {
 
 .gameSidebar {
   width: 18vw;
+  height: $canvas_height;
   display: flex; 
   flex-direction: column;
   .sidetab {
@@ -51,6 +52,7 @@ canvas {
     // border-right: 0;
     border-radius: 20px 20px 20px 20px; // top-left top-right bottom-right bottom-left
     margin: 0;
+    margin-bottom: 1em;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -79,6 +81,7 @@ tbody{
   tr {
     display: flex; 
     justify-content: space-between;
+    font-size: 0.7em;
   }
 }
 
