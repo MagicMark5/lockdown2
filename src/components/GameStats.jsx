@@ -76,7 +76,7 @@ export default function GameStats(props) {
 	return (
 		<ul className="gameStats sidetab">
 			<li className={danger ? "danger" : "none"}>Timer: {timer}</li>
-			<li>Zombie Kills: {killCount}</li>
+			<li>Kills: {killCount}</li>
 			<li>Score: {score} </li>
 		</ul>
 	)	

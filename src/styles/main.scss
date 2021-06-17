@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-$font-stack: 'Press Start 2P', Verdana, Geneva, Tahoma, sans-serif;
-$canvas_width: 60vw;
-$canvas_height: 0.75 * $canvas_width;
+// import _base.scss for variables and mixins
+@import 'base';
 
 body {
+  font-family: $font-stack;
   background-color: black;
   color: white;
   display: flex;
@@ -13,47 +11,40 @@ body {
   justify-content: center;
 }
 
-// Phaser game window
+header {
+  height: $header_height;
+}
+
+// Phaser game <canvas>
 canvas {
+  position: absolute;
+  top: $header_height;
+  margin-top: 8px;
   border: 3px solid white;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 20px;
   width: $canvas_width;
   height: $canvas_height;
 }
 
-// React Application
+// React Application <div id="root">
 #root {
-  height: $canvas_height;
-  margin-right: 1em;
+  height: 100vh;
+  width: 100%;
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: column;
   ul {
     list-style: none;
-  }
-}
-
-nav {
-  margin-bottom: 2em;
-  font-family: $font-stack;
-  font-size: 0.8em;
-  .navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0;
-  }
-  .login {
-    justify-content: space-evenly;
-    margin: 2em;
   }
 }
 
 // options/stats components beside game canvas
 
 .gameSidebar {
+  width: 18vw;
   display: flex; 
   flex-direction: column;
-  width: 100%;
   .sidetab {
-    font-size: 20px;
     font-family: $font-stack;
     line-height: 1.5em;
     border: 3px solid white;

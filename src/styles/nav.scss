@@ -1,0 +1,28 @@
+// import _base.scss for variables and mixins
+@import 'base';
+
+
+nav {
+  @include nav-list;
+  width: 100%;
+  height: 100%;
+  // LOCKDOWN logo
+  .logo {
+    font-size: 2em;
+    width: $beside_canvas;
+    padding: 0.5em;
+  }
+  // Main Navigation
+  .nav-list {
+    width: $canvas_width;
+    @include nav-list;
+  }
+  // Login/Register
+  .login {
+    @include nav-list;
+    flex-direction: column;
+    width: $beside_canvas;
+    color: teal;
+  }
+}
+

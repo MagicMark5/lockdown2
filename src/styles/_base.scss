@@ -1,0 +1,18 @@
+// Press Start 2P Font
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+$font-stack: 'Press Start 2P', Verdana, Geneva, Tahoma, sans-serif;
+$canvas_width: 60vw;
+$canvas_height: 0.75 * $canvas_width;
+$header_height: 60px;
+$beside_canvas: 20vw; // left/right of canvas
+
+@mixin nav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  li:hover {
+    text-decoration: underline;
+    cursor: pointer; 
+  }
+}

@@ -27,6 +27,7 @@ import GameUI from './phaser/utils/GameUI';
 
 // Styles
 import "./styles/main.scss";
+import "./styles/nav.scss";
 
 // Phaser Game Configuration
 

@@ -4,7 +4,7 @@ import Controls from './Controls.jsx';
 import GameStats from "./GameStats.jsx";
 import Highscores from "./Highscores.jsx";
 import Navigation from "./Navigation.jsx";
-import LoginNav from "./LoginNav.jsx";
+
 
 export default function App(props) {
 	const [gameSession, setGameSession] = useState({});
@@ -35,7 +35,6 @@ export default function App(props) {
 				<Highscores scores={highscores}/>
 				<Controls />
 			</div>
-			<LoginNav />
 		</>
 	);
 
