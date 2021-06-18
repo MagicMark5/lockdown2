@@ -38,19 +38,17 @@ canvas {
   }
 }
 
-// options/stats components beside game canvas
+// component boxes aside game canvas (Highscores, Controls, Game Stats, User Info)
 
-.gameSidebar {
+.asideGame {
   width: 18vw;
   height: $canvas_height;
   display: flex; 
   flex-direction: column;
   .sidetab {
-    font-family: $font-stack;
     line-height: 1.5em;
     border: 3px solid white;
-    // border-right: 0;
-    border-radius: 20px 20px 20px 20px; // top-left top-right bottom-right bottom-left
+    border-radius: 20px; // top-left top-right bottom-right bottom-left
     margin: 0;
     margin-bottom: 1em;
     padding: 1em;
@@ -61,6 +59,12 @@ canvas {
 }
 
 // Sidetabs Children
+.box-title {
+  color: teal;
+}
+.box-title:hover {
+  cursor: pointer;
+}
 
 .gameStats {
   // danger class added to timer when there is 1 minute remaining
@@ -69,24 +73,15 @@ canvas {
   }
 }
 
-.highScores {
-  border-top: 0;
-  .table-title {
-    color: teal;
-    text-decoration: underline;
-  }
-}
-// highscores table
-tbody{
+
+// highscores, controls tables
+tbody {
+  margin-top: 1em;
   tr {
     display: flex; 
     justify-content: space-between;
     font-size: 0.7em;
   }
-}
-
-.controls {
-  border-top: 0;
 }
 
 // background

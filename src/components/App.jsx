@@ -30,7 +30,7 @@ export default function App(props) {
 	return (
 		<>
 			<Navigation />
-			<div className="gameSidebar">
+			<div className="asideGame">
 				<GameStats saveGame={setGameSession}/>
 				<Highscores scores={highscores}/>
 				<Controls />

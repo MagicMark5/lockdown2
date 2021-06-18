@@ -15,7 +15,7 @@ export default function Highscores(props) {
 	
   return (
     <table className="highScores sidetab">
-      <caption className="table-title">Top Scores</caption>
+      <caption className="box-title">Top Scores</caption>
       <tbody>
         {scoreRows}
       </tbody>
