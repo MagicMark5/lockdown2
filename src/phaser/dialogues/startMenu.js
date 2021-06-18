@@ -18,7 +18,7 @@ export default class startMenu extends Phaser.Scene {
 
       let playButton = this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.5, "play_button").setDepth(1)
 
-      let optionButton = this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.5 + 100, "options_button").setDepth(1)
+      // let optionButton = this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.5 + 100, "options_button").setDepth(1)
 
       let hoverSprite = this.add.sprite(100,100, "player")
       hoverSprite.setScale(2)
@@ -63,22 +63,22 @@ export default class startMenu extends Phaser.Scene {
       })
 
       // Options Button configuration
-      optionButton.setInteractive();
+      // optionButton.setInteractive();
 
-      optionButton.on("pointerover", () => {
-        hoverSprite.setVisible(true)
-        hoverSprite.play("walk")
-        hoverSprite.x = optionButton.x - optionButton.width / 1.5;
-        hoverSprite.y = optionButton.y;
-      })
-      optionButton.on("pointerout", () => {
-        hoverSprite.setVisible(false)
-      })
+      // optionButton.on("pointerover", () => {
+      //   hoverSprite.setVisible(true)
+      //   hoverSprite.play("walk")
+      //   hoverSprite.x = optionButton.x - optionButton.width / 1.5;
+      //   hoverSprite.y = optionButton.y;
+      // })
+      // optionButton.on("pointerout", () => {
+      //   hoverSprite.setVisible(false)
+      // })
 
-      optionButton.on("pointerup", () => {
-        // opens Options react component
-        this.game.sound.mute = !this.game.sound.mute; 
-      })
+      // optionButton.on("pointerup", () => {
+      //   // opens Options react component
+      //   this.game.sound.mute = !this.game.sound.mute; 
+      // })
     }
 };
 
