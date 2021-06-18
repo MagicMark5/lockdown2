@@ -1,6 +1,9 @@
 // import _base.scss for variables and mixins
 @import 'base';
 
+// Closed box height for component boxes
+$closed-height: 30px; 
+
 body {
   font-family: $font-stack;
   background-color: black;
@@ -42,7 +45,6 @@ canvas {
 
 .asideGame {
   width: 18vw;
-  height: $canvas_height;
   display: flex; 
   flex-direction: column;
   .sidetab {
@@ -73,6 +75,12 @@ canvas {
   }
 }
 
+.closed {
+  height: $closed-height;
+  tbody {
+    display: none;
+  }
+}
 
 // highscores, controls tables
 tbody {
