@@ -8,6 +8,7 @@ VALUES
         FALSE,
         TRUE, 
         'medium',
+        'player',
         1
     ),
     (
@@ -17,6 +18,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
+        'player',
         2
     ),
     (
@@ -26,6 +28,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
+        'player',
         3
     ),
     (
@@ -35,6 +38,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
+        'player',
         4
     ),
     (
@@ -44,6 +48,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
+        'player',
         5
     ),
     (
@@ -53,6 +58,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
+        'player',
         3
     ),
     (
@@ -62,6 +68,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
+        'player',
         2
     ),
     (
@@ -71,6 +78,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
+        'player',
         1
     ),
     (
@@ -80,6 +88,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
+        'player',
         4
     ),
     (
@@ -89,5 +98,6 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
+        'player',
         2
     );
