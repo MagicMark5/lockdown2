@@ -4,11 +4,13 @@ import Controls from './Controls.jsx';
 import GameStats from "./GameStats.jsx";
 import Highscores from "./Highscores.jsx";
 import Navigation from "./Navigation.jsx";
+import UserForm from "./UserForm.jsx";
 
 
 export default function App(props) {
 	const [gameSession, setGameSession] = useState({});
 	const [highscores, setHighscores] = useState([]);
+	const [user, setUser] = useState(null);
 
 	// retrieve highscores from db on first render
 	// update highscores when post request to insert a game session into db is successful

@@ -8,5 +8,6 @@ CREATE TABLE game_sessions(
     died BOOLEAN NOT NULL, 
     antidote BOOLEAN NOT NULL, 
     mode VARCHAR(255) NOT NULL,
+    avatar VARCHAR(255) NOT NULL,
     user_id INTEGER REFERENCES users(id)
 );

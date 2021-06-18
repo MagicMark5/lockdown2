@@ -31,6 +31,5 @@ export default function Controls(props) {
         </tr>
       </tbody>
     </table>
-    
   );
 };
