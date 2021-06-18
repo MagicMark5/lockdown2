@@ -90,10 +90,10 @@ export default class GameScore extends Phaser.Scene {
       hoverSprite2.setVisible(false)
 
       //start music again
-      // this.game.sound.stopAll();
-      // this.sound.play("darkshadow", {
-      //   loop: true
-      // })
+      this.game.sound.stopAll();
+      this.sound.play("darkshadow", {
+        loop: true
+      })
 
       // Reset local gameData
       const resetData = {
@@ -121,7 +121,7 @@ export default class GameScore extends Phaser.Scene {
       })
       yesButton.on("pointerup", () => {
         sceneEvents.emit("save-game", { samples, kills, score, died, antidote, mode });
-        //this.sound.play("blood")
+        this.sound.play("blood")
         // Return to startMenu
         this.scene.start("startMenu", resetData);
       })

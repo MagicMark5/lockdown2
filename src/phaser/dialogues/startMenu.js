@@ -33,17 +33,15 @@ export default class startMenu extends Phaser.Scene {
       }), 
       yoyo: true
     })
-    
-
 
     // keeps sound playing even if not in the browser
     //this.sound.pauseOnBlur = false
 
     //plays the sound
-    // this.game.sound.stopAll();
-    // this.sound.play("darkshadow", {
-    //   loop: true
-    // })
+    this.game.sound.stopAll();
+    this.sound.play("darkshadow", {
+      loop: true
+    })
 
 
     playButton.setInteractive();
@@ -60,7 +58,7 @@ export default class startMenu extends Phaser.Scene {
     })
 
     playButton.on("pointerup", () => {
-      // this.sound.play("blood")
+      this.sound.play("blood")
       this.scene.start("Intro", data);
       sceneEvents.emit('reset-score', data);
     })

@@ -14,8 +14,8 @@ import spacebar from "./../../assets/menu-images/spacebar.png";
 import forestportal from "./../../assets/menu-images/forestportal.png";
 
 // sounds
-// import darkshadow from "./../../assets/sounds/darkshadows.mp3";
-// import blood from "./../../assets/sounds/bloodshed.mp3";
+import darkshadow from "./../../assets/sounds/darkshadows.mp3";
+import blood from "./../../assets/sounds/bloodshed.mp3";
 
 
 export default class loadingScene extends Phaser.Scene {
@@ -57,9 +57,9 @@ export default class loadingScene extends Phaser.Scene {
             frameWidth: 32
         });
 
-        // this.load.audio("darkshadow", darkshadow)
+        this.load.audio("darkshadow", darkshadow)
 
-        // this.load.audio("blood", blood)
+        this.load.audio("blood", blood)
 
         //Loading assets for the winning scene
         this.load.image("spacebar", spacebar);
