@@ -33,7 +33,7 @@ export default class BossUnlock extends Phaser.Scene {
     };
 
     this.add.image(0,0, "forestportal").setOrigin(0)
-    this.add.text(15,550, "A staircase has appeared in the forest...Hit Enter", {fontSize: 32, fontFamily: 'VT323'})
+    this.add.text(15,550, "A staircase has appeared in the forest...Hit enter", {fontSize: 32, fontFamily: 'VT323'})
 
     this.input.keyboard.once('keyup-ENTER', function () {      
           this.scene.start('Forest', dataUpdate);

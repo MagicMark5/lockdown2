@@ -69,7 +69,7 @@ export default class Dungeon extends Phaser.Scene {
     }
     
     // Create player at start location
-    this.player = new Player(this, spawnPlayerPos.x, spawnPlayerPos.y, 'player', data.inventory, data.health, data.sampleLocations, data.kills);
+    this.player = new Player(this, spawnPlayerPos.x, spawnPlayerPos.y, data.avatar, data.inventory, data.health, data.sampleLocations, data.kills);
     this.player.body.setCollideWorldBounds(true);
     this.cameras.main.startFollow(this.player); 
     const player = this.player;

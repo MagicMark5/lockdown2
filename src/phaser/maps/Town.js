@@ -95,7 +95,7 @@ export default class Town extends Phaser.Scene {
     }
     
     // Create player at start location and scale him
-    this.player = new Player(this, this.startingX, this.startingY, 'player', data.inventory, data.health, data.sampleLocations, data.kills);
+    this.player = new Player(this, this.startingX, this.startingY, data.avatar, data.inventory, data.health, data.sampleLocations, data.kills);
     const player = this.player;
     player.body.setCollideWorldBounds(false);
     

@@ -101,6 +101,7 @@ export default class GameScore extends Phaser.Scene {
         health: 500,
         kills: 0,
         inventory: [],
+        avatar: data.avatar,
         sampleLocations: {
           "Dungeon": null,
           "Town": null,

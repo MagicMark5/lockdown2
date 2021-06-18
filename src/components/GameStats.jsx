@@ -58,7 +58,6 @@ export default function GameStats(props) {
 		sceneEvents.on('save-game', (gameData) => {
 			// make post request to 'api/games' to insert game session data
 			// request body { samples, kills, score, died, antidote, mode }
-			console.log(gameData);
 			axios.post('api/games', gameData)
 				.then(res => {
 					// setGameSession in App.jsx to re-render highscores

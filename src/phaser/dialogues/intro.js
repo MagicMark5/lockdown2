@@ -37,7 +37,7 @@ export default class Intro extends Phaser.Scene {
     }
 
 
-    create() {
+    create(options) {
 
       // camera transition effect
       this.cameras.main.fadeIn(5000);
@@ -139,6 +139,7 @@ export default class Intro extends Phaser.Scene {
             comingFrom: "Intro",  
             health: 500,
             inventory: [],
+            avatar: options.avatar,
             sampleLocations: {
                 "Dungeon": null,
                 "Town": null,

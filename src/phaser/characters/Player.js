@@ -14,6 +14,7 @@ export default class Player extends Entity {
     this.gameData.health = health ? health : 500; // initialized as 500 
     this.gameData.sampleLocations = sampleLocations;
     this.gameData.kills = kills ? kills : 0;
+    this.gameData.avatar = textureKey;
     this.scene = scene;
  
     /////////// Walk animation

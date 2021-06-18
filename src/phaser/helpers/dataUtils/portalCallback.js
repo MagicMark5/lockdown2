@@ -41,6 +41,7 @@ export default function portalCallback(player, tile, thisScene, data) {
       comingFrom: comingFrom,  // string
       health: player.gameData.health, // number
       inventory: player.gameData.inventory, // []
+      avatar: player.textureKey,
       sampleLocations: player.gameData.sampleLocations, // { [], [], [] }
       kills: player.gameData.kills // number
     };

@@ -9,7 +9,8 @@ import skull from "./../../assets/menu-images/skull.png";
 import options_button from "./../../assets/menu-images/menuoptions.png";
 import play_button from "./../../assets/menu-images/menuplay.png";
 import logo from "./../../assets/menu-images/menuname.png";
-import player from "./../../assets/characters/players/player.png";
+import player_male from "./../../assets/characters/players/player-male.png";
+import player_female from "./../../assets/characters/players/player-female.png";
 import spacebar from "./../../assets/menu-images/spacebar.png";
 import forestportal from "./../../assets/menu-images/forestportal.png";
 
@@ -52,7 +53,12 @@ export default class loadingScene extends Phaser.Scene {
 
         this.load.image("logo", logo);
 
-        this.load.spritesheet("player", player, {
+        this.load.spritesheet("player-m", player_male, {
+            frameHeight: 32,
+            frameWidth: 32
+        });
+
+        this.load.spritesheet("player-f", player_female, {
             frameHeight: 32,
             frameWidth: 32
         });

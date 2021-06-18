@@ -37,6 +37,9 @@ export default function App(props) {
 				<Highscores scores={highscores}/>
 				<Controls />
 			</div>
+			<div className="userForm">
+				<UserForm />
+			</div>
 		</>
 	);
 

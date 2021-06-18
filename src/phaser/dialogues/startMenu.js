@@ -9,6 +9,8 @@ export default class startMenu extends Phaser.Scene {
   }
 
     create(data) {
+      // set avatar texture key to male as default if not defined
+      let avatarTexture = data.avatar || "player-m"; 
 
       this.cameras.main.fadeIn(5000);
 
@@ -20,15 +22,25 @@ export default class startMenu extends Phaser.Scene {
 
       let optionButton = this.add.image(this.game.renderer.width /2, this.game.renderer.height / 1.5 + 100, "options_button").setDepth(1)
 
-      let hoverSprite = this.add.sprite(100,100, "player")
+      let hoverSprite = this.add.sprite(100,100, avatarTexture)
       hoverSprite.setScale(2)
       hoverSprite.setVisible(false)
 
       this.anims.create({
-        key: "walk",
+        key: "walk-player-m",
         frameRate: 4,
         repeat: -1,
-        frames: this.anims.generateFrameNumbers("player", {
+        frames: this.anims.generateFrameNumbers("player-m", {
+          frames: [0,1,2]
+        }), 
+        yoyo: true
+      })
+
+      this.anims.create({
+        key: "walk-player-f",
+        frameRate: 4,
+        repeat: -1,
+        frames: this.anims.generateFrameNumbers("player-f", {
           frames: [0,1,2]
         }), 
         yoyo: true
@@ -48,7 +60,7 @@ export default class startMenu extends Phaser.Scene {
 
       playButton.on("pointerover", () => {
         hoverSprite.setVisible(true)
-        hoverSprite.play("walk")
+        hoverSprite.play(`walk-${avatarTexture}`)
         hoverSprite.x = playButton.x - playButton.width / 1.5;
         hoverSprite.y = playButton.y;
       })
@@ -58,6 +70,7 @@ export default class startMenu extends Phaser.Scene {
 
       playButton.on("pointerup", () => {
         this.sound.play("blood")
+        data.avatar = avatarTexture; // assign selected avatar
         this.scene.start("Intro", data);
         sceneEvents.emit('reset-score', data);
       })
@@ -67,7 +80,7 @@ export default class startMenu extends Phaser.Scene {
 
       optionButton.on("pointerover", () => {
         hoverSprite.setVisible(true)
-        hoverSprite.play("walk")
+        hoverSprite.play(`walk-${avatarTexture}`)
         hoverSprite.x = optionButton.x - optionButton.width / 1.5;
         hoverSprite.y = optionButton.y;
       })
@@ -78,6 +91,8 @@ export default class startMenu extends Phaser.Scene {
       optionButton.on("pointerup", () => {
         // opens Options react component
         this.game.sound.mute = !this.game.sound.mute; 
+        // give option to change player avatar texture key
+        avatarTexture = "player-f";
       })
     }
 };

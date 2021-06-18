@@ -12,7 +12,8 @@ import tiles from "./../../../assets/tilesets/town32-extruded.png";
 import obj_tiles from "./../../../assets/tilesets/dungeon-objects.png";
 
 // character sprites and atlas maps
-import player from "./../../../assets/characters/players/player.png";
+import player_male from "./../../../assets/characters/players/player-male.png";
+import player_female from "./../../../assets/characters/players/player-female.png";
 import boy1 from "./../../../assets/characters/players/testnpc.png";
 import boy1json from "./../../../assets/characters/players/testnpc.json";
 
@@ -39,7 +40,8 @@ export default function preloadAssets (scene) {
   scene.load.image('tiles', tiles);
   scene.load.image('obj-tiles', obj_tiles);
   scene.load.tilemapTiledJSON('map', map);
-  scene.load.spritesheet('player', player, { frameWidth: 32, frameHeight: 32 });
+  scene.load.spritesheet('player-m', player_male, { frameWidth: 32, frameHeight: 32 });
+  scene.load.spritesheet('player-f', player_female, { frameWidth: 32, frameHeight: 32 });
   scene.load.atlas('boy1', boy1, boy1json);
   
   // image for shots

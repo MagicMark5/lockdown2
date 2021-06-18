@@ -24,7 +24,7 @@ module.exports = ({
   /* POST 'api/games' to insert a new game session into db */
   router.post('/', (req, res) => {
     // const currentUserID = req.session.user_id;
-    const currentUserID = 2;
+    const currentUserID = 3;
 
     // check if a current user is logged in
     // if (!currentUserID) {

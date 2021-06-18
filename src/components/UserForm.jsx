@@ -6,13 +6,13 @@ export default function UserForm(props) {
   const classNames = `controls sidetab ${open ? "expanded" : "closed"}`;
 
   return (
-    <form>
+    <form className="sidetab">
       <label>Username</label>
       <input name="username" type="text"></input>
       <label>Email</label>
       <input name="email" type="text"></input>
       <label>Password</label>
-      <input name="email" type="text"></input>
+      <input name="password" type="password"></input>
     </form>
   );
 };

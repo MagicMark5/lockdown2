@@ -44,7 +44,7 @@ export default class FinalBoss extends Phaser.Scene {
   this.cameras.main.setZoom(1.7);
 
   // Create player at start location
-  this.player = new Player(this, 385, 580, 'player', data.inventory, data.health, data.sampleLocations, data.kills);
+  this.player = new Player(this, 385, 580, data.avatar, data.inventory, data.health, data.sampleLocations, data.kills);
   const player = this.player;
   player.body.setCollideWorldBounds(true);
 
