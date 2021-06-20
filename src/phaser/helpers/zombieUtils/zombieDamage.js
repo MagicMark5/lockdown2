@@ -52,6 +52,7 @@ const getAntidote = (scene, player) => {
     health: player.gameData.health,
     kills: player.gameData.kills,
     inventory: player.gameData.inventory,
+    avatar: player.gameData.avatar,
     antidote: true, // score bonus for retrieving the antidote
     sampleLocations: {
       "Dungeon": null,
