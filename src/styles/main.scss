@@ -3,12 +3,14 @@
 
 body {
   font-family: $font-stack;
+  background: url("https://cdn.hipwallpaper.com/i/44/13/x0DnLG.jpg");
   background-color: black;
-  color: white;
+  color: white; // body text color
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  overflow: scroll;
 }
 
 header {
@@ -28,7 +30,7 @@ canvas {
 
 // React Application <div id="root">
 #root {
-  height: 100vh;
+  overflow: scroll;
   width: 100%;
   font-size: 0.8em;
   display: flex;
@@ -59,7 +61,7 @@ canvas {
 
 // Sidetabs Children
 .box-title {
-  color: teal;
+  color: rgb(191, 180, 60);
   line-height: 2em;
 }
 .box-title:hover {
@@ -99,16 +101,6 @@ tbody {
     justify-content: space-between;
     font-size: 0.8em;
   }
-}
-
-// background
-.bg {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  opacity: 1;
-  z-index: -1;
-  filter:brightness(70%);
 }
 
 
