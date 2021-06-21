@@ -9,8 +9,9 @@ nav {
   // LOCKDOWN logo
   .logo {
     font-size: 2em;
-    width: $beside_canvas;
+    width: $beside_canvas - 5vw;
     padding: 0.5em;
+    text-align: center;
   }
   // Main Navigation
   .nav-list {
@@ -19,10 +20,14 @@ nav {
   }
   // Login/Register
   .login {
-    @include nav-list;
+    display: flex;
     flex-direction: column;
-    width: $beside_canvas;
+    justify-content: flex-start;
+    width: $beside_canvas - 6vw;
     color: teal;
+    ul {
+      margin: 0;
+    }
   }
 }
 

@@ -41,71 +41,21 @@ canvas {
   }
 }
 
-// component boxes aside game canvas (Highscores, Controls, Game Stats, User Info)
+/* ----- MEDIA QUERIES ----- */
 
-.asideGame { // panel left of canvas
-  width: $beside_canvas - 2vw;
-  display: flex; 
-  flex-direction: column;
-  .sidetab {
-    line-height: 1.5em;
-    border: 3px solid white;
-    border-radius: 20px; // top-left top-right bottom-right bottom-left
-    margin: 0;
-    margin-bottom: 1em;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-}
+/* Smartphones: to maximum width of around 480px (small tablets) */
+// @media only screen and (max-width: 480px) {
+//   /* smartphone only styles here */
 
-// .right {
-//   align-self: flex-end;
 // }
 
-// Sidetabs Children
-.box-title {
-  color: teal;
-  line-height: 2em;
-}
-.box-title:hover {
-  cursor: pointer;
-}
+// /* Small tablet or narrowed-browser screen */ 
+// @media only screen and (max-width: 667px) {
 
-.gameStats {
-  // danger class added to timer when there is 1 minute remaining
-  .danger {
-    color: red;
-  }
-}
+// }
 
-
-table {
-  transition: max-height 0.5s ease; // Max-Height transition on sidetab tables click
-  max-height: 20px;
-  tbody, tfoot {
-    overflow: hidden;
-  }
-  tfoot {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-.open {
-  max-height: 300px;
-}
-
-// Highscores and Controls tables
-
-tbody {
-  tr {
-    display: flex; 
-    justify-content: space-between;
-    font-size: 0.8em;
-  }
-}
+// /* Tablet and above: minimum width of 668px */
+// @media only screen and (min-width: 668px) {
+// }
 
 

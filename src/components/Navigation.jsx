@@ -7,7 +7,7 @@ export default function Navigation(props) {
     <header>
       <nav>
         <span className="logo">LOCKDOWN</span>
-        <ul className="nav-list">
+        {/* <ul className="nav-list">
           <li>Highscores</li>
           <li>Controls</li>
           <li>Game Stats</li>
@@ -15,7 +15,7 @@ export default function Navigation(props) {
         <ul className="login">
           <li>Log In</li>
           <li>Create Account</li>
-        </ul>
+        </ul> */}
       </nav>
     </header>
   );

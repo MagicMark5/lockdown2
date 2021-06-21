@@ -31,7 +31,6 @@ export default function App(props) {
   }, [gameSession]);
 
 
-
 	return (
 		<>
 			<Navigation />
