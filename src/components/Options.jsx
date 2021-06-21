@@ -4,10 +4,11 @@ import sceneEvents from "../phaser/utils/SceneEvents";
 export default function Options(props) {
   const { remoteOpen } = props;
   // Sound can be toggled at any time
-  // So it is not submitted with save button click
+  // Thus it is not submitted with save button click
   const [sound, setSound] = useState(true); // toggle game sound (mute/unmute)
   const [options, setOptions] = useState({
-    avatar: "player-f", // set avatar with textureKey string from phaser
+    disabled: true,
+    avatar: "player-m", // set avatar with textureKey string from phaser
     gameMode: "normal" // normal difficulty default
   }); // options cannot be chaged unless player is in startMenu scene
 
@@ -16,15 +17,34 @@ export default function Options(props) {
     sceneEvents.emit("toggle-sound");
   };
 
-  // open/close <Options> from phaser startMenu.js scene
+  // select onChange handler for avatar selection
+  const selectChange = (event) => {
+    setOptions({
+      ...options, 
+      avatar: event.target.value 
+    });
+  }
+
+  
+  /* --- Phaser <-> React event listeners and emitters --- */
+  
+  // open/close <Options/> container
+  // when <Options> is clicked from the Phaser startMenu.js scene
   sceneEvents.on("toggle-options", () => {
     remoteOpen();
   });
 
+  sceneEvents.on("toggle-enable-options", () => {
+    // Disable save, avatar, and mode elements if not on startMenu screen
+    setOptions({
+      ...options, 
+      disabled: !options.disabled
+    })
+  })
+
+  // Emit save-options event on Save button click
   const saveOptions = () => {
-    // Emit save-options event on Save button click
     sceneEvents.emit("save-options", options);
-    // Disable save button if not on startMenu screen
   };
 
 
@@ -45,12 +65,18 @@ export default function Options(props) {
         <tr>
           <td>Avatar</td>
           <td>
-            <select className="option-select" name="avatar">
+            <select 
+              className="option-select" 
+              name="avatar" 
+              onChange={selectChange}
+              value={options.avatar}
+              disabled={options.disabled}
+              >
               <option id="male" value="player-m">
-                Male
+                Boy
               </option>
               <option id="female" value="player-f">
-                Female
+                Girl
               </option>
             </select>
           </td>
@@ -84,7 +110,12 @@ export default function Options(props) {
         </tr>
         <tr>
           <td>
-            <button onClick={saveOptions}>Save</button>
+            <button 
+              onClick={saveOptions}
+              disabled={options.disabled}
+              >
+              Save
+            </button>
           </td>
         </tr>
       </tfoot>

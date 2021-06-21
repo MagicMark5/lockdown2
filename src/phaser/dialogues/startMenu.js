@@ -11,6 +11,8 @@ export default class startMenu extends Phaser.Scene {
     create(data) {
       // set avatar texture key to male as default if not defined
       let avatarTexture = data.avatar || "player-m"; 
+      // enable options on scene creation 
+      sceneEvents.emit("toggle-enable-options"); 
 
       this.cameras.main.fadeIn(5000);
 
@@ -72,7 +74,10 @@ export default class startMenu extends Phaser.Scene {
         this.sound.play("blood")
         data.avatar = avatarTexture; // assign selected avatar
         this.scene.start("Intro", data);
-        sceneEvents.emit('reset-score', data);
+        sceneEvents.emit("reset-score", data);
+        // disable Options react component elements: avatar, mode, and save
+        // so that avatar or game mode cannot be changed while playing
+        sceneEvents.emit("toggle-enable-options"); 
       })
 
       //Options Button configuration
@@ -101,7 +106,6 @@ export default class startMenu extends Phaser.Scene {
         // ensure avatar or game mode cannot be changed while playing
         // unless on startMenu scene
         if (this.scene.manager.isActive("startMenu")) { 
-          console.log(options.avatar);
           avatarTexture = options.avatar; // reassign avatar texture key
           // in future change gameMode (no implementation yet)
         }
