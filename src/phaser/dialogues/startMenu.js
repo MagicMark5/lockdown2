@@ -89,11 +89,18 @@ export default class startMenu extends Phaser.Scene {
       })
 
       optionButton.on("pointerup", () => {
-        // opens Options react component
-        this.game.sound.mute = !this.game.sound.mute; 
+        // Toggle open state of Options react component
+        sceneEvents.emit("toggle-options");
+        
         // give option to change player avatar texture key
         avatarTexture = "player-f";
       })
+
+      sceneEvents.on("toggle-sound", () => {
+        console.log("HULLO?")
+        this.game.sound.mute = !this.game.sound.mute; 
+      })
+
     }
 };
 

@@ -2,12 +2,18 @@ import React, {useState} from "react";
 import sceneEvents from "../phaser/utils/SceneEvents";
 
 export default function Options(props) {
+  const { remoteOpen } = props;
   const [sound, setSound] = useState(true) // toggle game sound (mute/unmute)
 
   const toggleSound = () => {
     setSound(!sound);
-    sceneEvents.emit("toggle-sound", sound);
+    sceneEvents.emit("toggle-sound");
   };
+
+  // open/close <Options> from phaser startMenu.js scene
+  sceneEvents.on("toggle-options", () => {
+    remoteOpen();
+  });
 
   return (
     <tbody>

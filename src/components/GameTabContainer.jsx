@@ -3,6 +3,8 @@ import React, {useState} from "react";
 import Controls from "./Controls.jsx";
 import Highscores from "./Highscores.jsx";
 import Options from "./Options.jsx";
+// Phaser events
+import sceneEvents from "../phaser/utils/SceneEvents.js";
 
 /* Container component for each sidetab */ 
 
@@ -18,9 +20,10 @@ export default function GameTabContainer(props) {
   const gameTabs = {
     "Controls": <Controls />,
     "Top Scores": <Highscores scores={scores} />,
-    "Options": <Options /> 
+    "Options": <Options remoteOpen={openBox}/> 
   };
   // Add to gameTabs object with title of component as key
+
 
   const tableClassNames = `sidetab ${open ? "open" : "closed"}`;
 
