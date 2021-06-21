@@ -73,12 +73,18 @@ canvas {
   }
 }
 
-// Max-Height transition on sidetab tables click
+
 table {
-  transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease; // Max-Height transition on sidetab tables click
   max-height: 20px;
-  tbody {
+  tbody, tfoot {
     overflow: hidden;
+  }
+  tfoot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 .open {

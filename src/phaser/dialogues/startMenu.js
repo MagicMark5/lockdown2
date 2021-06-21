@@ -91,13 +91,20 @@ export default class startMenu extends Phaser.Scene {
       optionButton.on("pointerup", () => {
         // Toggle open state of Options react component
         sceneEvents.emit("toggle-options");
-        
-        // give option to change player avatar texture key
-        avatarTexture = "player-f";
       })
 
       sceneEvents.on("toggle-sound", () => {
         this.game.sound.mute = !this.game.sound.mute; 
+      })
+
+      sceneEvents.on("save-options", (options) => {
+        // ensure avatar or game mode cannot be changed while playing
+        // unless on startMenu scene
+        if (this.scene.manager.isActive("startMenu")) { 
+          console.log(options.avatar);
+          avatarTexture = options.avatar; // reassign avatar texture key
+          // in future change gameMode (no implementation yet)
+        }
       })
 
     }
