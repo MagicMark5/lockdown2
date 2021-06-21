@@ -1,6 +1,10 @@
 import React, {useState} from "react";
+// Child Components
 import Controls from "./Controls.jsx";
 import Highscores from "./Highscores.jsx";
+import Options from "./Options.jsx";
+
+/* Container component for each sidetab */ 
 
 export default function GameTabContainer(props) {
   const { captionText, scores } = props;
@@ -13,9 +17,10 @@ export default function GameTabContainer(props) {
   // based on captionText string as key
   const gameTabs = {
     "Controls": <Controls />,
-    "Top Scores": <Highscores scores={scores} />
-  }
-
+    "Top Scores": <Highscores scores={scores} />,
+    "Options": <Options /> 
+  };
+  // Add to gameTabs object with title of component as key
 
   const tableClassNames = `sidetab ${open ? "open" : "closed"}`;
 

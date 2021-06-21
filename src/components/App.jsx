@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Controls from './Controls.jsx';
-import GameStats from "./GameStats.jsx";
-import Highscores from "./Highscores.jsx";
+
 import Navigation from "./Navigation.jsx";
-import UserForm from "./UserForm.jsx";
+import GameStats from "./GameStats.jsx";
+
 import GameTabContainer from "./GameTabContainer.jsx";
+import UserForm from "./UserForm.jsx";
 
 
 export default function App(props) {
@@ -39,6 +39,7 @@ export default function App(props) {
 				<GameStats saveGame={setGameSession}/>
 				<GameTabContainer captionText="Top Scores" scores={highscores}/>
 				<GameTabContainer captionText="Controls" />
+				<GameTabContainer captionText="Options" />
 			</div>
 			<div className="userForm">
 				{/* <UserForm /> */}
