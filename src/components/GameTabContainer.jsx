@@ -1,37 +1,28 @@
 import React, {useState} from "react";
+import Controls from "./Controls.jsx";
+import Highscores from "./Highscores.jsx";
 
 export default function GameTabContainer(props) {
+  const { captionText, scores } = props;
   const [open, setOpen] = useState(false); 
 
+  // Click handler to toggle open state on box caption
   const openBox = () => setOpen(!open);
 
-  const classNames = `controls sidetab ${open ? "open" : "closed"}`;
+  // gameTabs object will point to appropriate content
+  // based on captionText string as key
+  const gameTabs = {
+    "Controls": <Controls />,
+    "Top Scores": <Highscores scores={scores} />
+  }
+
+
+  const tableClassNames = `sidetab ${open ? "open" : "closed"}`;
 
   return (
-    <table className={classNames}>
-      <caption className="box-title" onClick={openBox}>Controls</caption>
-      <tbody>
-        <tr>
-          <td>Up</td>
-          <td>W or ⬆</td>
-        </tr>
-        <tr>
-          <td>Left</td>
-          <td>A or ⬅</td>
-        </tr>
-        <tr>
-          <td>Down</td>
-          <td>S or ⬇</td>
-        </tr>
-        <tr>
-          <td>Right</td>
-          <td>D or ➡</td>
-        </tr>
-        <tr>
-          <td>Shoot</td>
-          <td>Space</td>
-        </tr>
-      </tbody>
+    <table className={tableClassNames}>
+      <caption className="box-title" onClick={openBox}>{captionText}</caption>
+      {gameTabs[captionText]}
     </table>
   );
 };

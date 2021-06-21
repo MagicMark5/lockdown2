@@ -1,12 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 
 export default function Highscores(props) {
   const { scores } = props; // destructure sorted scores []
-  const [open, setOpen] = useState(false); 
-
-  const openBox = () => setOpen(!open);
-
-  const classNames = `controls sidetab ${open ? "open" : "closed"}`;
 
   // parse scores data into table <tr> and <td> with 
   const scoreRows = scores.map(game => {
@@ -19,11 +14,8 @@ export default function Highscores(props) {
   })
 	
   return (
-    <table className={classNames}>
-      <caption className="box-title" onClick={openBox}>Top Scores</caption>
-      <tbody>
-        {scoreRows}
-      </tbody>
-    </table>
+    <tbody>
+      {scoreRows}
+    </tbody>
   );
 }

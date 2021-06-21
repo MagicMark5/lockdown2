@@ -5,6 +5,7 @@ import GameStats from "./GameStats.jsx";
 import Highscores from "./Highscores.jsx";
 import Navigation from "./Navigation.jsx";
 import UserForm from "./UserForm.jsx";
+import GameTabContainer from "./GameTabContainer.jsx";
 
 
 export default function App(props) {
@@ -27,16 +28,17 @@ export default function App(props) {
         console.log(e);
       })
     }
-  }, [gameSession])
+  }, [gameSession]);
+
+
 
 	return (
 		<>
 			<Navigation />
 			<div className="asideGame">
 				<GameStats saveGame={setGameSession}/>
-				<Highscores scores={highscores}/>
-				<Controls />
-				<Controls />
+				<GameTabContainer captionText="Top Scores" scores={highscores}/>
+				<GameTabContainer captionText="Controls" />
 			</div>
 			<div className="userForm">
 				{/* <UserForm /> */}
