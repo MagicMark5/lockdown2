@@ -1,9 +1,6 @@
 // import _base.scss for variables and mixins
 @import 'base';
 
-// Closed box height for component boxes
-$closed-height: 30px; 
-
 body {
   font-family: $font-stack;
   background-color: black;
@@ -63,6 +60,7 @@ canvas {
 // Sidetabs Children
 .box-title {
   color: teal;
+  line-height: 2em;
 }
 .box-title:hover {
   cursor: pointer;
@@ -75,16 +73,21 @@ canvas {
   }
 }
 
-.closed {
-  height: $closed-height;
+// Max-Height transition on sidetab tables click
+table {
+  transition: max-height 0.5s ease;
+  max-height: 20px;
   tbody {
-    display: none;
+    overflow: hidden;
   }
 }
+.open {
+  max-height: 300px;
+}
 
-// highscores, controls tables
+// Highscores and Controls tables
+
 tbody {
-  margin-top: 1em;
   tr {
     display: flex; 
     justify-content: space-between;

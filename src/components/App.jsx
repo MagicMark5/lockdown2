@@ -36,9 +36,10 @@ export default function App(props) {
 				<GameStats saveGame={setGameSession}/>
 				<Highscores scores={highscores}/>
 				<Controls />
+				<Controls />
 			</div>
 			<div className="userForm">
-				<UserForm />
+				{/* <UserForm /> */}
 			</div>
 		</>
 	);
