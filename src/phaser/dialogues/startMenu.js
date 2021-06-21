@@ -97,7 +97,6 @@ export default class startMenu extends Phaser.Scene {
       })
 
       sceneEvents.on("toggle-sound", () => {
-        console.log("HULLO?")
         this.game.sound.mute = !this.game.sound.mute; 
       })
 
