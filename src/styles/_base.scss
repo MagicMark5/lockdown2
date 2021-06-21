@@ -5,7 +5,7 @@ $font-stack: 'Press Start 2P', Verdana, Geneva, Tahoma, sans-serif;
 $canvas_width: 60vw;
 $canvas_height: 0.70 * $canvas_width;
 $header_height: 60px;
-$beside_canvas: 20vw; // left/right of canvas
+$beside_canvas: 28vw; // space left/right of canvas
 
 @mixin nav-list {
   display: flex;

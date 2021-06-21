@@ -37,12 +37,10 @@ export default function App(props) {
 			<Navigation />
 			<div className="asideGame">
 				<GameStats saveGame={setGameSession}/>
-				<GameTabContainer captionText="Top Scores" scores={highscores}/>
-				<GameTabContainer captionText="Controls" />
+				<GameTabContainer captionText="Log In" />
 				<GameTabContainer captionText="Options" />
-			</div>
-			<div className="userForm">
-				{/* <UserForm /> */}
+				<GameTabContainer captionText="Highscores" scores={highscores}/>
+				<GameTabContainer captionText="Controls" />
 			</div>
 		</>
 	);

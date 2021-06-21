@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Controls from "./Controls.jsx";
 import Highscores from "./Highscores.jsx";
 import Options from "./Options.jsx";
+import UserForm from "./UserForm.jsx";
 // Phaser events
 import sceneEvents from "../phaser/utils/SceneEvents.js";
 
@@ -19,8 +20,9 @@ export default function GameTabContainer(props) {
   // based on captionText string as key
   const gameTabs = {
     "Controls": <Controls />,
-    "Top Scores": <Highscores scores={scores} />,
-    "Options": <Options remoteOpen={openBox}/> 
+    "Highscores": <Highscores scores={scores} />,
+    "Options": <Options remoteOpen={openBox}/>,
+    "Log In": <UserForm />
   };
   // Add to gameTabs object with title of component as key
 

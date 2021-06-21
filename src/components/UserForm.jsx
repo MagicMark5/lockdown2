@@ -1,18 +1,34 @@
 import React, {useState} from "react";
 
 export default function UserForm(props) {
-  const [open, setOpen] = useState(false); 
-
-  const classNames = `controls sidetab ${open ? "expanded" : "closed"}`;
 
   return (
-    <form className="sidetab">
-      <label>Username</label>
-      <input name="username" type="text"></input>
-      <label>Email</label>
-      <input name="email" type="text"></input>
-      <label>Password</label>
-      <input name="password" type="password"></input>
-    </form>
+    <tbody>
+      <tr>
+        <td>
+          <label>Username</label>
+        </td>
+        <td>
+          <input name="username" type="text"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Email</label>
+        </td>
+        <td>
+          <input name="email" type="text"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Password</label>
+        </td>
+        <td>
+          <input name="password" type="password"></input>
+        </td>
+      </tr>
+    </tbody>
+
   );
 };

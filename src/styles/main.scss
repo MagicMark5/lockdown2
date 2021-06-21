@@ -3,8 +3,8 @@
 
 body {
   font-family: $font-stack;
-  background: url("https://cdn.hipwallpaper.com/i/44/13/x0DnLG.jpg");
-  background-color: black;
+  background: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-color: #00212b;
   color: white; // body text color
   display: flex;
   flex-direction: row;
@@ -21,6 +21,7 @@ header {
 canvas {
   position: absolute;
   top: $header_height;
+  left: $beside_canvas;
   margin-top: 8px;
   border: 3px solid white;
   border-radius: 20px;
@@ -32,7 +33,7 @@ canvas {
 #root {
   overflow: scroll;
   width: 100%;
-  font-size: 0.8em;
+  font-size: 1em;
   display: flex;
   flex-direction: column;
   ul {
@@ -42,8 +43,8 @@ canvas {
 
 // component boxes aside game canvas (Highscores, Controls, Game Stats, User Info)
 
-.asideGame {
-  width: 18vw;
+.asideGame { // panel left of canvas
+  width: $beside_canvas - 2vw;
   display: flex; 
   flex-direction: column;
   .sidetab {
@@ -59,9 +60,13 @@ canvas {
   }
 }
 
+// .right {
+//   align-self: flex-end;
+// }
+
 // Sidetabs Children
 .box-title {
-  color: rgb(191, 180, 60);
+  color: teal;
   line-height: 2em;
 }
 .box-title:hover {
