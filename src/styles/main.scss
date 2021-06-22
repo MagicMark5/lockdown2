@@ -7,7 +7,7 @@ body {
   background-color: #00212b;
   color: white; // body text color
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   overflow: scroll;
@@ -15,47 +15,77 @@ body {
 
 header {
   height: $header_height;
+  display: none;
 }
 
 // Phaser game <canvas>
 canvas {
-  position: absolute;
-  top: $header_height;
-  left: $beside_canvas;
   margin-top: 8px;
   border: 3px solid white;
   border-radius: 20px;
-  width: $canvas_width;
-  height: $canvas_height;
+  width: 95vw;
+  height: 0.75 * 95vw; // maintain ratio of h/w = 0.75
 }
 
 // React Application <div id="root">
 #root {
+  margin-top: 1em;
   overflow: scroll;
   width: 100%;
   font-size: 1em;
   display: flex;
   flex-direction: column;
+  align-items: center;
   ul {
     list-style: none;
   }
 }
 
 /* ----- MEDIA QUERIES ----- */
+// Design is mobile-first
+// Queries below cover tablet and desktop
 
-/* Smartphones: to maximum width of around 480px (small tablets) */
-// @media only screen and (max-width: 480px) {
-//   /* smartphone only styles here */
+/* Tablet or narrowed-browser screen */ 
+@media all and (min-width: 682px) and (max-width: 998px) {
+  canvas {
+    width: $canvas_width_tablet;
+    height: $canvas_height_tablet;
+    margin-bottom: 0;
+  }
 
-// }
+  div.asideGame {
+    width: 0.8 * $canvas_width_tablet;
+  }
+}
 
-// /* Small tablet or narrowed-browser screen */ 
-// @media only screen and (max-width: 667px) {
-
-// }
-
-// /* Tablet and above: minimum width of 668px */
-// @media only screen and (min-width: 668px) {
-// }
+/* Tablet and above: minimum width of 668px */
+@media all and (min-width: 999px) {
+  .box-title {
+    color: teal;
+  }
+  body {
+    flex-direction: row;
+    justify-content: start;
+  }
+  header {
+    height: $header_height;
+    display: inherit;
+  }
+  canvas {
+    position: absolute;
+    margin-top: 1.5em;
+    top: $header_height;
+    left: $beside_canvas;
+    width: $canvas_width;
+    height: $canvas_height;
+  }
+  #root {
+    width: $beside_canvas;
+    height: $canvas_height;
+  }
+  div.asideGame {
+    width: $beside_canvas - 3vw;
+  }
+}
 
 

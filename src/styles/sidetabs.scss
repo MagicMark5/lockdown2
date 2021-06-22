@@ -3,7 +3,7 @@
 // component boxes aside game canvas (Highscores, Controls, Game Stats, User Info)
 
 .asideGame { // panel left of canvas
-  width: $beside_canvas - 2vw;
+  width: 0.8 * 100vw;
   display: flex; 
   flex-direction: column;
   .sidetab {
@@ -35,7 +35,6 @@
   }
 }
 
-
 table {
   transition: max-height 0.5s ease; // Max-Height transition on sidetab tables click
   max-height: 20px;
@@ -61,33 +60,4 @@ tbody {
   }
 }
 
-/* ----- MEDIA QUERIES ----- */
 
-/* Smartphones: to maximum width of around 480px (small tablets) */
-@media all and (max-width: 480px) {
-  /* smartphone only styles here */
-  body {
-    flex-direction: column;
-    background-color: tomato;
-  }
-  .box-title {
-    color: white;
-    line-height: 2em;
-  }
-}
-
-/* Small tablet or narrowed-browser screen */ 
-@media all and (max-width: 667px) {
-  .box-title {
-    color: blue;
-    line-height: 2em;
-  }
-}
-
-/* Tablet and above: minimum width of 668px */
-@media all and (min-width: 668px) {
-  .box-title {
-    color: red;
-    line-height: 2em;
-  }
-}
