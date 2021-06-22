@@ -36,7 +36,7 @@ export default function App(props) {
 			<Navigation />
 			<div className="asideGame">
 				<GameStats saveGame={setGameSession}/>
-				<GameTabContainer captionText="Log In" />
+				{/* <GameTabContainer captionText="Log In" /> */}
 				<GameTabContainer captionText="Options" />
 				<GameTabContainer captionText="Highscores" scores={highscores}/>
 				<GameTabContainer captionText="Controls" />

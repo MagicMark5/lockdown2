@@ -1,5 +1,5 @@
 INSERT INTO
-users(username, avatar, email, password)
+users(username, email, password)
 VALUES
     ('Mario', 'mario@nintendo.com', 'test'),
     ('Luigi', 'luigi@nintendo.com', 'test'),

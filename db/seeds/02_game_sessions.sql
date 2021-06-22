@@ -1,5 +1,5 @@
 INSERT INTO
-game_sessions(samples, kills, score, died, antidote, mode, user_id)
+game_sessions(samples, kills, score, died, antidote, mode, avatar, user_id)
 VALUES
     (
         36, 
@@ -8,7 +8,7 @@ VALUES
         FALSE,
         TRUE, 
         'medium',
-        'player',
+        'player-m',
         1
     ),
     (
@@ -18,7 +18,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
-        'player',
+        'player-f',
         2
     ),
     (
@@ -28,7 +28,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
-        'player',
+        'player-m',
         3
     ),
     (
@@ -38,7 +38,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
-        'player',
+        'playe-f',
         4
     ),
     (
@@ -48,7 +48,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
-        'player',
+        'player-m',
         5
     ),
     (
@@ -58,7 +58,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
-        'player',
+        'player-f',
         3
     ),
     (
@@ -68,7 +68,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
-        'player',
+        'playe-f',
         2
     ),
     (
@@ -78,7 +78,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
-        'player',
+        'player-f',
         1
     ),
     (
@@ -88,7 +88,7 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
-        'player',
+        'player-m',
         4
     ),
     (
@@ -98,6 +98,6 @@ VALUES
         TRUE,
         FALSE, 
         'medium',
-        'player',
+        'player-m',
         2
     );
