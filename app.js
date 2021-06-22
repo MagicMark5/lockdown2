@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// The directory to serve is 'dist' after we run 'npm run build'
-app.use(express.static(path.join(__dirname, 'dist')));
+// The directory to serve is 'client/build' after we run 'npm run build' in the client folder
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 
@@ -43,7 +43,7 @@ app.use('/api/games', gamesRouter(dbHelpers));
 
 // Catch-all to serve index.html for any undefined routes 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
 });
 
 module.exports = app;

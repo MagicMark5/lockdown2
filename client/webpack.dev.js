@@ -6,12 +6,12 @@ module.exports = merge(common, {
   mode: "development",
   output: {
     filename: "[name].bundle.js", 
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     clean: true
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: './build',
   },
   optimization: {
     concatenateModules: true // hoist scope of all modules into one closure (enabled by default in production)
