@@ -6,9 +6,10 @@
   "main": "src/index.js",
   "proxy": "http://localhost:3001",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "startDev": "nodemon ./bin/www",
     "build": "webpack --config webpack.prod.js",
-    "devServer": "webpack --config webpack.dev.js && npm start",
+    "devServer": "webpack --config webpack.dev.js && npm startDev",
     "devClient": "webpack serve --config webpack.dev.js --open",
     "db:reset": "node ./db/reset.js"
   },
