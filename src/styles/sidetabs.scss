@@ -4,6 +4,7 @@
 
 .asideGame { // panel left of canvas
   width: 0.8 * 100vw;
+  height: fit-content;
   display: flex; 
   flex-direction: column;
   .sidetab {

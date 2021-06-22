@@ -10,7 +10,6 @@ body {
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  overflow: scroll;
 }
 
 header {
@@ -32,6 +31,7 @@ canvas {
   margin-top: 1em;
   overflow: scroll;
   width: 100%;
+  height: 1200px;
   font-size: 1em;
   display: flex;
   flex-direction: column;
@@ -81,7 +81,7 @@ canvas {
   }
   #root {
     width: $beside_canvas;
-    height: $canvas_height;
+    height: fit-content;
   }
   div.asideGame {
     width: $beside_canvas - 3vw;
