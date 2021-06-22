@@ -77,6 +77,19 @@ module.exports = (db) => {
             .catch(err => err);
   }
 
+
+
+    const getGames = () => {
+        const query = {
+            text: 'SELECT * FROM game_sessions',
+        };
+
+        return db
+            .query(query)
+            .then((result) => result.rows)
+            .catch((err) => err);
+    }
+
   // POST 'api/games' helper to insert gameData into game_sessions table
   const insertGameSession = (gameData, userID) => {
     // assemble SQL query parameters with gameData, which comes from req.body
@@ -112,6 +125,7 @@ module.exports = (db) => {
       addUser,
       getUsersGames,
       getHighscores,
+      getGames,
       insertGameSession
   };
 };
