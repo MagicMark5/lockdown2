@@ -95,9 +95,12 @@ module.exports = ({
                 // returns array of top 10 game sessions ordered by score 
                 res.json(highscores)
             })
-            .catch((err) => res.json({
-                error: err.message
-            }));
+            .catch((err) => {
+                console.log(err);
+                res.json({ error: err.message });
+            } 
+            
+            );
     })
 
     return router;

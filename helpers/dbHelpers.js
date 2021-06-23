@@ -72,9 +72,13 @@ module.exports = (db) => {
         ORDER BY score DESC
         LIMIT 10`
     }
+
     return db.query(query)
             .then(result => result.rows)
-            .catch(err => err);
+            .catch(err => {
+                console.log(err);
+                return err;
+            });
   }
 
 
