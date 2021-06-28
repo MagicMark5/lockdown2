@@ -22,7 +22,8 @@ export default function App(props) {
       .then(res => {
 				// response from server is game sessions array (length 10) sorted by score
         // give sorted array of {} to <Highscores> as props.scores
-				setHighscores(res.data);
+				// setHighscores(res.data);
+				console.log(res);
       })
       .catch(e => {
         console.log(e);
