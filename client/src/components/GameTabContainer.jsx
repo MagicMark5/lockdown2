@@ -10,7 +10,7 @@ import sceneEvents from "../phaser/utils/SceneEvents.js";
 /* Container component for each sidetab */ 
 
 export default function GameTabContainer(props) {
-  const { captionText, scores } = props;
+  const { captionText, scores, fetchHighscores } = props;
   const [open, setOpen] = useState(false); 
 
   // Click handler to toggle open state on box caption

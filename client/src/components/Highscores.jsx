@@ -1,9 +1,11 @@
 import React from "react";
 
 export default function Highscores(props) {
-  const { scores } = props; // destructure sorted scores []
+  const { scores, fetchHighscores } = props; // destructure sorted scores []
 
-  // parse scores data into table <tr> and <td> with 
+  // Show loading indicator here until highscores have been retrieved ...
+
+  // parse scores data into table <tr> and <td> 
   const scoreRows = scores.map(game => {
     return (
       <tr key={game.game_id}>
