@@ -90,16 +90,15 @@ module.exports = ({
 
     router.get('/highscores', (req, res) => {
         // GET 'api/users/highscores'
-        res.send("Hello! It works!");
-        // getHighscores()
-        //     .then((highscores) => {
-        //         // returns array of top 10 game sessions ordered by score 
-        //         res.json(highscores)
-        //     })
-        //     .catch((err) => {
-        //         console.log(err);
-        //         res.json({ error: err.message });
-        //     });
+        getHighscores()
+            .then((highscores) => {
+                // returns array of top 10 game sessions ordered by score 
+                res.json(highscores)
+            })
+            .catch((err) => {
+                console.log(err);
+                res.json({ error: err.message });
+            });
     })
 
     return router;
