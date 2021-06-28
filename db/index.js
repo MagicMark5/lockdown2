@@ -8,6 +8,7 @@ const connectionString = `postgres://${process.env.DB_USER}:${process.env.DB_PAS
 
 const client = new pg.Client({
     connectionString: connectionString || process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
 });
 
 if (env === 'development') {
