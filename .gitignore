@@ -4,3 +4,5 @@
 /client/build
 .DS_Store
 .env
+/client/.env.development
+/client/.env.production

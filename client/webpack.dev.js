@@ -1,6 +1,7 @@
 const path = require('path');
 const common = require('./webpack.common');
 const { merge } = require('webpack-merge');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = merge(common, {
   mode: "development",
@@ -16,6 +17,11 @@ module.exports = merge(common, {
   optimization: {
     concatenateModules: true // hoist scope of all modules into one closure (enabled by default in production)
   },
+  plugins: [
+    new Dotenv({
+      path: `./.env.development`
+    })
+  ],
   module: {
     rules: [
       {

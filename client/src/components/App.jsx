@@ -9,7 +9,7 @@ import UserForm from "./UserForm.jsx";
 
 
 export default function App(props) {
-	const [gameSession, setGameSession] = useState(null);
+	const [gameSession, setGameSession] = useState({});
 	const [highscores, setHighscores] = useState([]);
 	const [user, setUser] = useState(null);
 
