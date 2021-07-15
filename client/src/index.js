@@ -2,6 +2,11 @@
 import Phaser from "phaser";
 import React from "react";
 import ReactDOM from "react-dom";
+import axios from "axios";
+
+if (process.env.NODE_ENV === "production") {
+  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+}
 
 // React Application
 import App from "./components/App.jsx";
