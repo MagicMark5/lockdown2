@@ -22,7 +22,6 @@ module.exports = merge(common, {
   plugins: [  
     new Dotenv({
       path: `./.env.production`, // expose "process.env" to client
-      systemvars: true
     }), 
     new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}) // extract css into its own bundle
   ],

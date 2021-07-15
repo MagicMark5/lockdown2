@@ -4,10 +4,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 
-if (process.env.REACT_APP_API_BASE_URL) {
-  console.log(process.env.REACT_APP_API_BASE_URL);
-  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
-}
+axios.defaults.baseURL = "https://lockdown-v2.herokuapp.com/";
+// if (process.env.REACT_APP_API_BASE_URL) {
+//   console.log(process.env.REACT_APP_API_BASE_URL);
+// }
 
 // React Application
 import App from "./components/App.jsx";
