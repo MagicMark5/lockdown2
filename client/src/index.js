@@ -4,7 +4,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 
-if (NODE_ENV === "production") {
+if (process.env) {
+  console.log(process.env.REACT_APP_API_BASE_URL);
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 }
 

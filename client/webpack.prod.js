@@ -4,6 +4,7 @@ const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = merge(common, {
   mode: "production",
@@ -19,6 +20,7 @@ module.exports = merge(common, {
     ]
   },
   plugins: [  
+    new Dotenv(), // expose "process.env" to client
     new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}) // extract css into its own bundle
   ],
   module: {
